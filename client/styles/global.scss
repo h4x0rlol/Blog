@@ -1,0 +1,29 @@
+$db: #2f3238;
+$dc: #f5f5f5;
+$lb: #f9f9f9;
+$lc: #1a1a1a;
+$l: #1abc89;
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(../fonts/SourceSansPro-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 1.618;
+  font-weight: 400;
+}
+
+body {
+  background-color: $db;
+  color: $dc;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
