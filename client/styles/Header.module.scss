@@ -12,8 +12,7 @@
 }
 
 .header_name {
-  flex: 0 0 100%;
-  max-width: 85%;
+  width: 100%;
 }
 
 .header_name_text {
@@ -32,9 +31,22 @@
   color: #f5f5f5;
 }
 
+.header_spoiler {
+  display: flex;
+  height: 1.5rem;
+  width: 13rem;
+  margin-top: 1rem;
+  color: #2a2c30;
+  background-color: #2a2c30;
+}
+
+.header_spoiler:hover {
+  color: #f5f5f5;
+  background-color: #2f3238;
+}
+
 .header_contacts {
   display: flex;
-  width: 100%;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 1rem;
 }
@@ -77,6 +89,7 @@
   .header_content {
     flex-direction: column;
   }
+
   .header_contacts {
     margin-top: 1rem;
     border-left: 0;

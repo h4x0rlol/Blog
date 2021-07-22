@@ -7,7 +7,10 @@ const Header = () => {
         <div className={styles.header_name}>
           <h2 className={styles.header_name_text}>Dmitry Khailov</h2>
           <div className={styles.header_name_specializaton}>
-            Fullstack Javascript Developer
+            <p>Fullstack Javascript Developer</p>
+            <div className={styles.header_spoiler}>
+              <p>at least would like to be</p>
+            </div>
           </div>
         </div>
         <div className={styles.header_contacts}>

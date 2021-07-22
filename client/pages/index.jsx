@@ -3,8 +3,10 @@ import styles from "../styles/Index.module.scss";
 
 const Index = () => {
   return (
-    <div className={styles.container}>
-      <Header />
+    <div className={styles.main}>
+      <div className={styles.container}>
+        <Header />
+      </div>
     </div>
   );
 };
