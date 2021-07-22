@@ -1,5 +1,7 @@
 import styles from "../styles/Navbar.module.scss";
 import Link from "next/link";
+import { faSun, faArrowRight, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Navbar = ({ children }) => {
   return (
@@ -14,12 +16,33 @@ const Navbar = ({ children }) => {
             <Link href="/">
               <a>CV</a>
             </Link>
+          </div>
+          <div className={styles.navbar_buttons}>
             <div className={styles.navbar_language}>
               <label className={styles.navbar_switcher}>
                 <input className={styles.navbar_input} type="checkbox" />
                 <span className={styles.navbar_slider}></span>
                 <span className={styles.navbar_en}>EN</span>
                 <span className={styles.navbar_ru}>RU</span>
+              </label>
+            </div>
+            <div className={styles.navbar_theme}>
+              <label className={styles.navbar_theme_switcher}>
+                <input type="checkbox" />
+                <div>
+                  <i>
+                    <FontAwesomeIcon icon={faSun} />
+                  </i>
+                  <i>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className={styles.switcher_arrow}
+                    />
+                  </i>
+                  <i>
+                    <FontAwesomeIcon icon={faMoon} />
+                  </i>
+                </div>
               </label>
             </div>
           </div>
