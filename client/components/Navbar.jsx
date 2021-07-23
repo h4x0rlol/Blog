@@ -2,8 +2,11 @@ import styles from "../styles/Navbar.module.scss";
 import Link from "next/link";
 import { faSun, faArrowRight, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRouter } from "next/router";
 
 const Navbar = ({ children }) => {
+  const router = useRouter();
+
   return (
     <>
       <div className={styles.navbar}>
@@ -11,10 +14,26 @@ const Navbar = ({ children }) => {
           <h1 className={styles.navbar_name}>h4x0rlol</h1>
           <div className={styles.navbar_buttons}>
             <Link href="/blog">
-              <a>Blog</a>
+              <a
+                className={
+                  router.pathname == "/blog"
+                    ? styles.active_link
+                    : styles.inactive_link
+                }
+              >
+                Blog
+              </a>
             </Link>
             <Link href="/">
-              <a>CV</a>
+              <a
+                className={
+                  router.pathname == "/"
+                    ? styles.active_link
+                    : styles.inactive_link
+                }
+              >
+                CV
+              </a>
             </Link>
           </div>
           <div className={styles.navbar_buttons}>
