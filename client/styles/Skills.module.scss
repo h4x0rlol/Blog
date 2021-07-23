@@ -1,0 +1,66 @@
+.education {
+  display: flex;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 1rem;
+  padding-left: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.education_section {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.section_header {
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 1rem;
+  font-size: 1.125rem;
+  letter-spacing: 0.15rem;
+  color: #54b689;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.section_header::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 100%;
+  background: #54b689;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.section_ul {
+  font-size: 0.875rem;
+  padding-left: 0;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.section_li {
+  margin-bottom: 1rem;
+}
+
+.degree {
+  font-weight: 700;
+}
+
+.university {
+  font-weight: 300;
+}
+
+.education_years {
+  font-weight: 300;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 480px) {
+  .education {
+    border-left: 0;
+  }
+}

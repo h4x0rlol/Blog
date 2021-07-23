@@ -91,6 +91,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
+      <hr className={styles.hr} />
     </div>
   );
 };

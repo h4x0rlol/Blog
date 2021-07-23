@@ -1,6 +1,7 @@
 .header {
   display: flex;
   width: 100%;
+  flex-direction: column;
 }
 
 .header_content {
@@ -85,9 +86,23 @@
   height: 1em;
 }
 
+.hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
 @media (max-width: 480px) {
   .header_content {
     flex-direction: column;
+  }
+
+  .hr {
+    margin-right: 14px;
+    margin-top: 0;
   }
 
   .header_contacts {
