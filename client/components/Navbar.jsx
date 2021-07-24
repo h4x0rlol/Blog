@@ -37,14 +37,6 @@ const Navbar = ({ children }) => {
             </Link>
           </div>
           <div className={styles.navbar_buttons}>
-            <div className={styles.navbar_language}>
-              <label className={styles.navbar_switcher}>
-                <input className={styles.navbar_input} type="checkbox" />
-                <span className={styles.navbar_slider}></span>
-                <span className={styles.navbar_en}>EN</span>
-                <span className={styles.navbar_ru}>RU</span>
-              </label>
-            </div>
             <div className={styles.navbar_theme}>
               <label className={styles.navbar_theme_switcher}>
                 <input type="checkbox" />
