@@ -6,14 +6,15 @@
 
 .header_content {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
+  flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+  align-items: center;
 }
 
 .header_name {
-  width: 100%;
+  flex: 0 0 75%;
+  max-width: 75%;
 }
 
 .header_name_text {

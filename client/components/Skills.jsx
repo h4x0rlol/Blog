@@ -4,7 +4,7 @@ import styles from "../styles/Skills.module.scss";
 const Skills = () => {
   return (
     <div className={styles.education}>
-      <section styles={styles.education_section}>
+      <section className={styles.education_section}>
         <h3 className={styles.section_header}>Education</h3>
         <ul className={styles.section_ul}>
           <li className={styles.section_li}>

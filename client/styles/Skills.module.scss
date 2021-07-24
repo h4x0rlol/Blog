@@ -1,9 +1,10 @@
 .education {
-  display: flex;
-  flex-direction: row;
+  flex: 0 0 25%;
+  max-width: 25%;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 1rem;
-  padding-left: 1.5rem;
+  padding-left: 1.2rem;
+  padding-right: 1.5rem;
   padding-bottom: 1.5rem;
 }
 
@@ -61,12 +62,12 @@
 
 .skills {
   padding-bottom: 1rem;
-  padding-left: 1.5rem;
+  padding-top: 1rem;
 }
 
 .languages {
   padding-bottom: 1rem;
-  padding-left: 1.5rem;
+  padding-top: 1rem;
 }
 
 .muted {
@@ -78,14 +79,5 @@
     border-left: 0;
     padding-left: 0.2rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    flex-direction: column;
-  }
-
-  .skills {
-    padding-left: 0;
-  }
-
-  .languages {
-    padding-left: 0;
   }
 }

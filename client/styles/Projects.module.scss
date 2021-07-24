@@ -1,26 +1,31 @@
+@import "./variables";
+
 .container {
   display: flex;
-  width: 100%;
-  -moz-box-pack: justify;
-  justify-content: space-between;
+  flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
 }
 
-.projects {
+.project {
+  display: flex;
+  flex-direction: row;
   width: 100%;
+  justify-content: space-between;
 }
 
-$db: #2f3238;
-$dc: #f5f5f5;
-$lb: #f9f9f9;
-$lc: #1a1a1a;
-$l: #1abc89;
+.project_description {
+  display: flex;
+  align-self: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 
 .items {
-  display: flex;
-  flex-flow: row wrap;
-  width: 100%;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  flex: 0 0 75%;
+  max-width: 75%;
 }
 
 .item {
@@ -29,8 +34,8 @@ $l: #1abc89;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  height: 160px;
   margin: 5px;
   cursor: pointer;
   background-color: lighten($db, 5);
@@ -83,5 +88,9 @@ $l: #1abc89;
 
   .items {
     padding-top: 1rem;
+  }
+
+  .project {
+    flex-direction: column;
   }
 }
