@@ -69,13 +69,9 @@ $l: #1abc89;
   font-weight: 600;
 }
 
-.svg_masked_text {
-  fill: rgba(#fff, 1);
-}
-
 .item:hover {
-  circle,
-  image {
+  .circle,
+  .image {
     transform: scale(1);
   }
 }

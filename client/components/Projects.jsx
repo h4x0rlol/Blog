@@ -4,7 +4,6 @@ import Skills from "./Skills";
 
 const Projects = () => {
   const [items, setItems] = React.useState([]);
-  // const itemRef = React.useRef(null);
 
   React.useEffect(() => {
     if (document.querySelector("svg") && document.querySelectorAll("#item")) {
@@ -53,14 +52,15 @@ const Projects = () => {
     }
   }, []);
 
-  const handleMouseMove = () => {
-    console.log("Dsadasd");
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.items}>
-        <div className={styles.item} id="item">
+        <a
+          className={styles.item}
+          id="item"
+          href="https://github.com/h4x0rlol/timesheet"
+          target="_blank"
+        >
           <svg
             preserveAspectRatio="xMidYMid slice"
             viewBox="0 0 300 200"
@@ -79,30 +79,27 @@ const Projects = () => {
             </defs>
 
             <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
-              X-rays
+              Timesheet
             </text>
 
             <g clipPath="url(#clip-0)">
               <image
                 className={styles.image}
                 height="100%"
-                preserveAspectRatio="xMinYMin slice"
+                preserveAspectRatio="xMidYMid"
                 width="100%"
-                href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/i-xrays.png"
+                href="/img/timesheet.png"
               ></image>
-              <text
-                className={styles.svg_masked_text}
-                dy=".3em"
-                x="50%"
-                y="50%"
-              >
-                X-rays
-              </text>
             </g>
           </svg>
-        </div>
+        </a>
 
-        <div className={styles.item} id="item">
+        <a
+          className={styles.item}
+          id="item"
+          href="https://happy-hearts.herokuapp.com/"
+          target="_blank"
+        >
           <svg
             preserveAspectRatio="xMidYMid slice"
             viewBox="0 0 300 200"
@@ -121,30 +118,27 @@ const Projects = () => {
             </defs>
 
             <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
-              X-rays
+              Happy Hearts
             </text>
 
             <g clipPath="url(#clip-1)">
               <image
                 className={styles.image}
                 height="100%"
-                preserveAspectRatio="xMinYMin slice"
+                preserveAspectRatio="xMidYMid"
                 width="100%"
-                href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/i-xrays.png"
+                href="/img/happyhearts.png"
               ></image>
-              <text
-                className={styles.svg_masked_text}
-                dy=".3em"
-                x="50%"
-                y="50%"
-              >
-                X-rays
-              </text>
             </g>
           </svg>
-        </div>
+        </a>
 
-        <div className={styles.item} id="item">
+        <a
+          className={styles.item}
+          id="item"
+          href="https://github.com/h4x0rlol/gnility"
+          target="_blank"
+        >
           <svg
             preserveAspectRatio="xMidYMid slice"
             viewBox="0 0 300 200"
@@ -163,32 +157,29 @@ const Projects = () => {
             </defs>
 
             <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
-              X-rays
+              Gnility
             </text>
 
             <g clipPath="url(#clip-2)">
               <image
                 className={styles.image}
                 height="100%"
-                preserveAspectRatio="xMinYMin slice"
+                preserveAspectRatio="xMidYMid"
                 width="100%"
-                href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/i-xrays.png"
+                href="/img/gnility.png"
               ></image>
-              <text
-                className={styles.svg_masked_text}
-                dy=".3em"
-                x="50%"
-                y="50%"
-              >
-                X-rays
-              </text>
             </g>
           </svg>
-        </div>
+        </a>
 
-        <div className={styles.item} id="item">
+        <a
+          className={styles.item}
+          id="item"
+          href="https://github.com/h4x0rlol/darts2bot"
+          target="_blank"
+        >
           <svg
-            preserveAspectRatio="xMidYMid slice"
+            preserveAspectRatio="xMiYMid slice"
             viewBox="0 0 300 200"
             className={styles.svg}
           >
@@ -205,30 +196,27 @@ const Projects = () => {
             </defs>
 
             <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
-              X-rays
+              darts2bot
             </text>
 
             <g clipPath="url(#clip-3)">
               <image
                 className={styles.image}
                 height="100%"
-                preserveAspectRatio="xMinYMin slice"
+                preserveAspectRatio="xMidYMid"
                 width="100%"
-                href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/i-xrays.png"
+                href="/img/darts2bot.jpeg"
               ></image>
-              <text
-                className={styles.svg_masked_text}
-                dy=".3em"
-                x="50%"
-                y="50%"
-              >
-                X-rays
-              </text>
             </g>
           </svg>
-        </div>
+        </a>
 
-        <div className={styles.item} id="item">
+        <a
+          className={styles.item}
+          id="item"
+          href="https://github.com/h4x0rlol/react-interactive-weather"
+          target="_blank"
+        >
           <svg
             preserveAspectRatio="xMidYMid slice"
             viewBox="0 0 300 200"
@@ -247,28 +235,20 @@ const Projects = () => {
             </defs>
 
             <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
-              X-rays
+              WeatherMaps
             </text>
 
             <g clipPath="url(#clip-4)">
               <image
                 className={styles.image}
                 height="100%"
-                preserveAspectRatio="xMinYMin slice"
+                preserveAspectRatio="xMinYMid"
                 width="100%"
-                href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/i-xrays.png"
+                href="/img/weather.jpeg"
               ></image>
-              <text
-                className={styles.svg_masked_text}
-                dy=".3em"
-                x="50%"
-                y="50%"
-              >
-                X-rays
-              </text>
             </g>
           </svg>
-        </div>
+        </a>
       </div>
 
       <Skills />
