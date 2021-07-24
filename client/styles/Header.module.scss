@@ -98,11 +98,11 @@
 
 @media (max-width: 480px) {
   .header_content {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .hr {
-    margin-right: 14px;
+    margin-right: 52px;
     margin-top: 0;
   }
 
@@ -114,5 +114,11 @@
 
   .header_contacts_ul {
     padding-inline-start: 0;
+  }
+}
+
+@media (max-width: 290px) {
+  .hr {
+    margin-right: -29px;
   }
 }

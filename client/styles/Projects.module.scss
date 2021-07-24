@@ -81,13 +81,37 @@
   }
 }
 
+.hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  font-variant: small-caps;
+  padding-top: 1rem;
+}
+
 @media (max-width: 480px) {
   .container {
     flex-direction: column-reverse;
   }
 
+  .project_description {
+    padding-left: 0.5rem;
+    padding-right: 0;
+  }
+
   .items {
     padding-top: 1rem;
+    max-width: 100%;
+    flex: 0;
+    margin-left: -6px;
   }
 
   .project {
