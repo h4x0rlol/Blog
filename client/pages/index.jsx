@@ -4,12 +4,14 @@ import styles from "../styles/Index.module.scss";
 
 const Index = () => {
   return (
-    <div className={styles.main}>
-      <div className={styles.container}>
-        <Header />
-        <Projects />
+    <>
+      <div className={styles.main}>
+        <div className={styles.container}>
+          <Header />
+          <Projects />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

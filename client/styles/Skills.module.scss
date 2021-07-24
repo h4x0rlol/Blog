@@ -1,5 +1,6 @@
 .education {
   display: flex;
+  flex-direction: column;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 1rem;
   padding-left: 1.5rem;
@@ -35,7 +36,7 @@
 }
 
 .section_ul {
-  font-size: 0.875rem;
+  font-size: 1rem;
   padding-left: 0;
   list-style: none;
   margin-top: 0;
@@ -57,6 +58,20 @@
 .education_years {
   font-weight: 300;
   font-size: 0.75rem;
+}
+
+.skills {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.languages {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.muted {
+  font-weight: 300;
 }
 
 @media (max-width: 480px) {

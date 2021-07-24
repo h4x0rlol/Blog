@@ -18,6 +18,35 @@ const Skills = () => {
           </li>
         </ul>
       </section>
+      <section className={styles.skills}>
+        <h3 className={styles.section_header}>Skills</h3>
+        <div className={styles.section_item}>
+          <ul className={styles.section_ul}>
+            <li className={styles.section_li}>React</li>
+            <li className={styles.section_li}>Redux</li>
+            <li className={styles.section_li}>Next.js</li>
+            <li className={styles.section_li}>Typescript</li>
+            <li className={styles.section_li}>Express</li>
+            <li className={styles.section_li}>SQL</li>
+            <li className={styles.section_li}>Telegraf.js</li>
+            <li className={styles.section_li}>WebRTC</li>
+            <li className={styles.section_li}>Linux</li>
+          </ul>
+        </div>
+      </section>
+      <section className={styles.languages}>
+        <h3 className={styles.section_header}>Languages</h3>
+        <ul className={styles.section_ul}>
+          <li className={styles.section_li}>
+            Russian
+            <span className={styles.muted}> (Native)</span>
+          </li>
+          <li className={styles.section_li}>
+            English
+            <span className={styles.muted}> (Fluent)</span>
+          </li>
+        </ul>
+      </section>
     </div>
   );
 };

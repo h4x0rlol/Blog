@@ -97,5 +97,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// <path  fill="#161614"></path>
