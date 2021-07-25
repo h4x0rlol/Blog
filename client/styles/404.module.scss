@@ -1,0 +1,41 @@
+.error {
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-variant: small-caps;
+}
+
+.h1 {
+  display: inline-block;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 0;
+  margin-right: 20px;
+  padding: 10px 23px 10px 0;
+  font-size: 34px;
+  vertical-align: top;
+}
+
+.text {
+  text-align: left;
+  line-height: 49px;
+  height: 49px;
+}
+
+.h2 {
+  font-size: 24px;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 480px) {
+  .h1 {
+    font-size: 25px;
+  }
+  .h2 {
+    font-size: 15px;
+  }
+}
