@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "../styles/Navbar.module.scss";
 import Link from "next/link";
 import { faSun, faArrowRight, faMoon } from "@fortawesome/free-solid-svg-icons";
@@ -6,6 +7,12 @@ import { useRouter } from "next/router";
 
 const Navbar = ({ children }) => {
   const router = useRouter();
+  const [activeTheme, setActiveTheme] = React.useState("dark");
+  const inactiveTheme = activeTheme === "light" ? "dark" : "light";
+
+  React.useEffect(() => {
+    document.body.dataset.theme = activeTheme;
+  }, [activeTheme]);
 
   return (
     <>
@@ -39,7 +46,10 @@ const Navbar = ({ children }) => {
           <div className={styles.navbar_buttons}>
             <div className={styles.navbar_theme}>
               <label className={styles.navbar_theme_switcher}>
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  onChange={() => setActiveTheme(inactiveTheme)}
+                />
                 <div>
                   <i>
                     <FontAwesomeIcon icon={faSun} />

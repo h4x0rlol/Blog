@@ -145,7 +145,7 @@ const Projects = () => {
                     height="100%"
                     preserveAspectRatio="xMidYMid"
                     width="100%"
-                    href="/img/happyhearts.png"
+                    href="/img/happyhearts.jpg"
                   ></image>
                 </g>
               </svg>
@@ -194,7 +194,7 @@ const Projects = () => {
                     height="100%"
                     preserveAspectRatio="xMidYMid"
                     width="100%"
-                    href="/img/gnility.png"
+                    href="/img/gnility.jpg"
                   ></image>
                 </g>
               </svg>
@@ -243,7 +243,7 @@ const Projects = () => {
                     height="100%"
                     preserveAspectRatio="xMidYMid"
                     width="100%"
-                    href="/img/darts2bot.jpeg"
+                    href="/img/darts2bot.jpg"
                   ></image>
                 </g>
               </svg>
@@ -292,7 +292,7 @@ const Projects = () => {
                     height="100%"
                     preserveAspectRatio="xMinYMid"
                     width="100%"
-                    href="/img/weather.jpeg"
+                    href="/img/weather.jpg"
                   ></image>
                 </g>
               </svg>
