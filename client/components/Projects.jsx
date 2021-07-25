@@ -1,9 +1,15 @@
 import React from "react";
 import styles from "../styles/Projects.module.scss";
 import Skills from "./Skills";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const [items, setItems] = React.useState([]);
+  const [divref, divinView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-60px 0px",
+  });
 
   React.useEffect(() => {
     if (document.querySelector("svg") && document.querySelectorAll("#item")) {
@@ -303,8 +309,18 @@ const Projects = () => {
         </div>
         <Skills />
       </div>
-      <hr className={styles.hr} />
-      <div className={styles.footer}>Wow! You scrolled the whole page!</div>
+
+      <motion.div
+        ref={divref}
+        initial={{ opacity: 0, y: 70 }}
+        animate={divinView ? { opacity: 1, y: 0 } : { opacity: 0, y: 70 }}
+        transition={{ duration: 0.8 }}
+      >
+        <hr className={styles.hr} />
+        <div className={styles.footer_text}>
+          Wow! You scrolled the whole page!
+        </div>
+      </motion.div>
     </>
   );
 };
