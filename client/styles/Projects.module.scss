@@ -38,8 +38,10 @@
   height: 160px;
   margin: 5px;
   cursor: pointer;
-  background-color: lighten($db, 5);
-  border-radius: 2px;
+  background-color: lighten(#15232d, 1);
+  // border-radius: 2px;
+  border-radius: 5%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.02),
     inset 0 0px 0px 1px rgba(0, 0, 0, 0.07);
   transform: translateZ(0);
@@ -66,7 +68,7 @@
 }
 
 .svg_text {
-  fill: lighten($db, 16);
+  fill: #e3e3e3;
   font-size: 1.1rem;
   text-transform: uppercase;
   text-anchor: middle;
@@ -85,7 +87,7 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   margin-right: -15px;
   margin-left: -15px;
 }
