@@ -106,12 +106,8 @@ $deep-blue: #54b689;
 }
 
 @media (max-width: 480px) {
-  .navbar_theme {
-    padding: 10px;
-  }
-
-  .navbar_name {
-    padding: 5px;
+  .navbar_container {
+    width: 90%;
   }
 }
 
@@ -122,5 +118,9 @@ $deep-blue: #54b689;
 
   .navbar_name {
     padding: 0;
+  }
+
+  .navbar_container {
+    width: 100%;
   }
 }
