@@ -21,7 +21,7 @@
   font-size: 2.75rem;
   font-weight: 900;
   letter-spacing: 0.4rem;
-  color: #1ed760;
+  color: var(--color-text-secondary);
   text-transform: uppercase;
   margin-bottom: 0;
 }
@@ -30,7 +30,7 @@
   font-size: 1.25rem;
   font-weight: 300;
   margin-bottom: 0;
-  color: #e3e3e3;
+  color: var(--color-text-primary);
 }
 
 .header_spoiler {
@@ -38,18 +38,18 @@
   height: 1.5rem;
   width: 13rem;
   margin-top: 1rem;
-  color: #15232d;
-  background-color: #15232d;
+  color: var(--color-bg-primary);
+  background-color: var(--color-bg-primary);
 }
 
 .header_spoiler:hover {
-  color: #e3e3e3;
-  background-color: #15232d;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
 }
 
 .header_contacts {
   display: flex;
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid var(--color-border-secondary);
   font-size: 1rem;
 }
 
@@ -74,7 +74,7 @@
 .header_link {
   text-decoration: none;
   cursor: pointer;
-  color: #e3e3e3;
+  color: var(--color-text-primary);
 }
 
 .header_svg {
@@ -91,7 +91,7 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid var(--color-border-secondary);
   margin-right: -15px;
   margin-left: -15px;
 }
@@ -109,7 +109,7 @@
   .header_contacts {
     margin-top: 1rem;
     border-left: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid var(--color-border-secondary);
   }
 
   .header_contacts_ul {

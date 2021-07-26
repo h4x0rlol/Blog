@@ -12,8 +12,8 @@
   margin-bottom: 3rem;
   margin-top: 3rem;
   padding-top: 3rem;
-  background-color: #15232d;
-  color: #e3e3e3;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
 }
 
 .article {
@@ -72,11 +72,11 @@
 
 .tags_first {
   float: left;
-  color: #939393;
+  color: var(--color-text-tags);
 }
 
 .tags_item {
   float: left;
   margin-left: 5px;
-  color: #939393;
+  color: var(--color-text-tags);
 }
