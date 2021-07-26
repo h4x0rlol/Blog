@@ -12,8 +12,9 @@
   margin-bottom: 3rem;
   margin-top: 3rem;
   padding-top: 3rem;
-  background-color: var(--color-bg-primary);
-  color: var(--color-text-primary);
+  // background-color: var(--color-bg-primary);
+  // color: var(--color-text-primary);
+  // transition: all 100ms linear;
 }
 
 .article {
@@ -73,10 +74,12 @@
 .tags_first {
   float: left;
   color: var(--color-text-tags);
+  transition: all 100ms linear;
 }
 
 .tags_item {
   float: left;
   margin-left: 5px;
   color: var(--color-text-tags);
+  transition: all 100ms linear;
 }

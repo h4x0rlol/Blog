@@ -10,6 +10,7 @@
   top: 0;
   width: 100%;
   z-index: 1;
+  transition: all 100ms linear;
 }
 
 .navbar_container {
@@ -27,6 +28,7 @@
   font-variant: small-caps;
   margin: 0;
   color: var(--color-text-primary);
+  transition: all 100ms linear;
 }
 
 .navbar_buttons {
@@ -78,6 +80,7 @@
 
         > :first-child {
           color: var(--color-text-secondary);
+          transition: all 100ms linear;
         }
       }
     }
@@ -86,6 +89,7 @@
       + div {
         > :last-child {
           color: var(--color-text-secondary);
+          transition: all 100ms linear;
         }
       }
     }
@@ -94,10 +98,12 @@
 
 .active_link {
   color: var(--color-text-secondary);
+  transition: all 100ms linear;
 }
 
 .inactive_link {
   color: var(--color-text-primary);
+  transition: all 100ms linear;
 }
 
 @media (max-width: 480px) {

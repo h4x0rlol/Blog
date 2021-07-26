@@ -15,13 +15,21 @@
   font-weight: bold;
 }
 
-body,
+body {
+  transition: all 100ms linear;
+}
+
+@media (max-width: 480px) {
+  body {
+    transition: none;
+  }
+}
+
 body[data-theme="dark"] {
   --color-text-primary: #e3e3e3;
   --color-text-secondary: #ffa7c4;
   --color-bg-primary: #15232d;
   --color-border-primary: #949494;
-  --color-bg-secondary: #172630;
   --color-bg-item: #172630;
   --color-border-secondary: rgba(255, 255, 255, 0.2);
   --color-box-shadow: rgba(255, 255, 255, 0.028);
@@ -29,11 +37,11 @@ body[data-theme="dark"] {
 }
 
 body[data-theme="light"] {
-  --color-text-primary: #28211b;
-  --color-text-secondary: #1ed760;
+  --color-text-primary: #222;
+  --color-text-secondary: #ffa7c4;
   --color-bg-primary: #fff;
-  --color-border-primary: #949494;
-  --color-bg-secondary: #172630;
+  --color-border-primary: #605a57;
+  --color-bg-item: #edeef0;
   --color-border-secondary: rgba(0, 0, 0, 0.2);
   --color-box-shadow: rgba(0, 0, 0, 0.05);
   --color-text-tags: #939393;

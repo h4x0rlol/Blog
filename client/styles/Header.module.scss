@@ -24,6 +24,7 @@
   color: var(--color-text-secondary);
   text-transform: uppercase;
   margin-bottom: 0;
+  transition: all 100ms linear;
 }
 
 .header_name_specializaton {
@@ -31,6 +32,7 @@
   font-weight: 300;
   margin-bottom: 0;
   color: var(--color-text-primary);
+  transition: all 100ms linear;
 }
 
 .header_spoiler {
@@ -45,12 +47,14 @@
 .header_spoiler:hover {
   color: var(--color-text-primary);
   background-color: var(--color-bg-primary);
+  transition: all 100ms linear;
 }
 
 .header_contacts {
   display: flex;
   border-left: 1px solid var(--color-border-secondary);
   font-size: 1rem;
+  transition: all 100ms linear;
 }
 
 .header_contacts_ul {
@@ -75,6 +79,7 @@
   text-decoration: none;
   cursor: pointer;
   color: var(--color-text-primary);
+  transition: all 100ms linear;
 }
 
 .header_svg {
@@ -94,6 +99,7 @@
   border-top: 1px solid var(--color-border-secondary);
   margin-right: -15px;
   margin-left: -15px;
+  transition: all 100ms linear;
 }
 
 @media (max-width: 480px) {
