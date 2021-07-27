@@ -18,7 +18,11 @@ class MyDocument extends Document {
             href="/favicons/favicon.ico"
             type="image/x-icon"
           />
-          <meta charset="utf-8" />
+          <meta charSet="utf-8" />
+          <meta
+            name="description"
+            content="Dmitry Khailov personal portofilo website and blog"
+          ></meta>
         </Head>
         <body>
           <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />

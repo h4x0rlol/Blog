@@ -103,11 +103,9 @@ const Projects = () => {
             </a>
 
             <div className={styles.project_description}>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem
-              dolor iste alias temporibus aliquid sunt nulla cumque! Voluptatum
-              vero voluptatem quis laudantium, libero nostrum ipsum quos a sequi
-              recusandae alias, tempora earum aliquid eum quidem architecto
-              officiis voluptates delectus aliquam.
+              The Time Analyzer, was made exclusively for yourself's needs and
+              always under development. Frontend on React, Typescript, Redux,
+              backend on Express, PostgreSQL.
             </div>
           </div>
 
@@ -152,11 +150,9 @@ const Projects = () => {
             </a>
 
             <div className={styles.project_description}>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem
-              dolor iste alias temporibus aliquid sunt nulla cumque! Voluptatum
-              vero voluptatem quis laudantium, libero nostrum ipsum quos a sequi
-              recusandae alias, tempora earum aliquid eum quidem architecto
-              officiis voluptates delectus aliquam.
+              Website for buying English courses for young children, payment
+              using Yandex Kassa (frontend on React, backend on Express, React
+              Admin, and MySQL for database).
             </div>
           </div>
 
@@ -201,11 +197,8 @@ const Projects = () => {
             </a>
 
             <div className={styles.project_description}>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem
-              dolor iste alias temporibus aliquid sunt nulla cumque! Voluptatum
-              vero voluptatem quis laudantium, libero nostrum ipsum quos a sequi
-              recusandae alias, tempora earum aliquid eum quidem architecto
-              officiis voluptates delectus aliquam.
+              Simple WebRTC peer to peer chat on random topics (React, Peerjs,
+              Typescript)
             </div>
           </div>
 
@@ -250,11 +243,8 @@ const Projects = () => {
             </a>
 
             <div className={styles.project_description}>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem
-              dolor iste alias temporibus aliquid sunt nulla cumque! Voluptatum
-              vero voluptatem quis laudantium, libero nostrum ipsum quos a sequi
-              recusandae alias, tempora earum aliquid eum quidem architecto
-              officiis voluptates delectus aliquam.
+              Telegram darts-game bot using Telegraf.js, Typescript, Nodejs,
+              Mysql.
             </div>
           </div>
 
@@ -262,7 +252,7 @@ const Projects = () => {
             <a
               className={styles.item}
               id="item"
-              href="https://github.com/h4x0rlol/react-interactive-weather"
+              href="https://github.com/h4x0rlol/weathermaps"
               target="_blank"
             >
               <svg
@@ -299,11 +289,8 @@ const Projects = () => {
             </a>
 
             <div className={styles.project_description}>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem
-              dolor iste alias temporibus aliquid sunt nulla cumque! Voluptatum
-              vero voluptatem quis laudantium, libero nostrum ipsum quos a sequi
-              recusandae alias, tempora earum aliquid eum quidem architecto
-              officiis voluptates delectus aliquam.
+              React single page Weather Application using OpenWeatherMap API and
+              leaflet maps, Chartjs for graphs and Booststrap for styles.
             </div>
           </div>
         </div>
