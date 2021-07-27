@@ -18,6 +18,6 @@
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
   border-radius: 1%;
-  transition: background-color 100ms linear;
-  transition: color 100ms linear;
+  transition: background-color 100ms linear, color 100ms linear,
+    border-color 100ms linear, box-shadow 100ms linear;
 }
