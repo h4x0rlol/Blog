@@ -11,8 +11,15 @@ class MyDocument extends Document {
     document.body.dataset.theme = 'dark';
   `;
     return (
-      <Html>
-        <Head />
+      <Html lang="en">
+        <Head>
+          <link
+            rel="shortcut icon"
+            href="/favicons/favicon.ico"
+            type="image/x-icon"
+          />
+          <meta charset="utf-8" />
+        </Head>
         <body>
           <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
           <Main />
