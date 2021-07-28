@@ -103,9 +103,9 @@ const Projects = () => {
             </a>
 
             <div className={styles.project_description}>
-              The Time Analyzer, was made exclusively for yourself's needs and
-              always under development. Frontend on React, Typescript, Redux,
-              backend on Express, PostgreSQL.
+              The Time Analyzer, was made for yourself's needs and always under
+              development. Frontend on React, Typescript, Redux, backend on
+              Express, PostgreSQL.
             </div>
           </div>
 
