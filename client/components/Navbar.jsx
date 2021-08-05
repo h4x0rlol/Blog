@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "../styles/Navbar.module.scss";
 import Link from "next/link";
 import { faSun, faArrowRight, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,6 +8,14 @@ const Navbar = ({ children }) => {
   const router = useRouter();
   const [activeTheme, setActiveTheme] = React.useState("dark");
   const inactiveTheme = activeTheme === "light" ? "dark" : "light";
+  const [styles, setStyles] = React.useState();
+
+  // To fix svg flickering
+
+  React.useEffect(async () => {
+    const lstyles = await import("../styles/Navbar.module.scss");
+    setStyles(lstyles);
+  }, []);
 
   React.useEffect(() => {
     document.body.dataset.theme = activeTheme;
@@ -16,60 +23,64 @@ const Navbar = ({ children }) => {
 
   return (
     <>
-      <div className={styles.navbar}>
-        <div className={styles.navbar_container}>
-          <h1 className={styles.navbar_name}>h4x0rlol</h1>
-          <div className={styles.navbar_buttons}>
-            <Link href="/blog">
-              <a
-                className={
-                  router.pathname == "/blog"
-                    ? styles.active_link
-                    : styles.inactive_link
-                }
-              >
-                Blog
-              </a>
-            </Link>
-            <Link href="/">
-              <a
-                className={
-                  router.pathname == "/"
-                    ? styles.active_link
-                    : styles.inactive_link
-                }
-              >
-                CV
-              </a>
-            </Link>
-          </div>
-          <div className={styles.navbar_buttons}>
-            <div className={styles.navbar_theme}>
-              <label className={styles.navbar_theme_switcher}>
-                <input
-                  type="checkbox"
-                  onChange={() => setActiveTheme(inactiveTheme)}
-                />
-                <div>
-                  <i>
-                    <FontAwesomeIcon icon={faSun} />
-                  </i>
-                  <i>
-                    <FontAwesomeIcon
-                      icon={faArrowRight}
-                      className={styles.switcher_arrow}
+      {styles && (
+        <>
+          <div className={styles.navbar}>
+            <div className={styles.navbar_container}>
+              <h1 className={styles.navbar_name}>h4x0rlol</h1>
+              <div className={styles.navbar_buttons}>
+                <Link href="/blog">
+                  <a
+                    className={
+                      router.pathname == "/blog"
+                        ? styles.active_link
+                        : styles.inactive_link
+                    }
+                  >
+                    Blog
+                  </a>
+                </Link>
+                <Link href="/">
+                  <a
+                    className={
+                      router.pathname == "/"
+                        ? styles.active_link
+                        : styles.inactive_link
+                    }
+                  >
+                    CV
+                  </a>
+                </Link>
+              </div>
+              <div className={styles.navbar_buttons}>
+                <div className={styles.navbar_theme}>
+                  <label className={styles.navbar_theme_switcher}>
+                    <input
+                      type="checkbox"
+                      onChange={() => setActiveTheme(inactiveTheme)}
                     />
-                  </i>
-                  <i>
-                    <FontAwesomeIcon icon={faMoon} />
-                  </i>
+                    <div>
+                      <i>
+                        <FontAwesomeIcon icon={faSun} />
+                      </i>
+                      <i>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className={styles.switcher_arrow}
+                        />
+                      </i>
+                      <i>
+                        <FontAwesomeIcon icon={faMoon} />
+                      </i>
+                    </div>
+                  </label>
                 </div>
-              </label>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div>{children}</div>
+          <div>{children}</div>
+        </>
+      )}
     </>
   );
 };
