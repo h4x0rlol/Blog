@@ -19,6 +19,7 @@ body {
   transition: all 100ms linear;
 }
 
+body,
 body[data-theme="dark"] {
   --color-text-primary: #e3e3e3;
   --color-text-secondary: #ffa7c4;
