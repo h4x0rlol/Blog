@@ -297,7 +297,7 @@ const Projects = () => {
         <Skills />
       </div>
 
-      <motion.div
+      <motion.footer
         ref={divref}
         initial={{ opacity: 0, y: 70 }}
         animate={divinView ? { opacity: 1, y: 0 } : { opacity: 0, y: 70 }}
@@ -307,7 +307,7 @@ const Projects = () => {
         <div className={styles.footer_text}>
           Wow! You scrolled the whole page!
         </div>
-      </motion.div>
+      </motion.footer>
     </>
   );
 };

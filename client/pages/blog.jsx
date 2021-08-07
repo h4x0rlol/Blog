@@ -9,7 +9,7 @@ const Blog = () => {
         <title>Blog</title>
       </Head>
 
-      <div className={styles.main}>
+      <main className={styles.main}>
         <div className={styles.container}>
           <article className={styles.article}>
             <div className={styles.article_inner}>
@@ -38,7 +38,7 @@ const Blog = () => {
             </div>
           </article>
         </div>
-      </div>
+      </main>
     </>
   );
 };
