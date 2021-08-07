@@ -20,7 +20,7 @@ const Navbar = ({ children }) => {
     <>
       {styles && (
         <>
-          <div className={styles.navbar}>
+          <header className={styles.navbar}>
             <div className={styles.navbar_container}>
               <h1 className={styles.navbar_name}>h4x0rlol</h1>
               <div className={styles.navbar_buttons}>
@@ -72,7 +72,7 @@ const Navbar = ({ children }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </header>
           <div>{children}</div>
         </>
       )}

@@ -9,12 +9,12 @@ const Custom404 = () => {
         <title>Not Found</title>
       </Head>
 
-      <div className={styles.error}>
+      <main className={styles.error}>
         <h1 className={styles.h1}>404</h1>
         <div className={styles.text}>
           <h2 className={styles.h2}>This page could not be found.</h2>
         </div>
-      </div>
+      </main>
     </>
   );
 };
