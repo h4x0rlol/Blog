@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../styles/Navbar.module.scss";
 import Link from "next/link";
 import { faSun, faArrowRight, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,16 +7,10 @@ import { useRouter } from "next/router";
 
 const Navbar = ({ children }) => {
   const router = useRouter();
-  const [activeTheme, setActiveTheme] = React.useState("dark");
+  const [activeTheme, setActiveTheme] = React.useState(
+    document.body.dataset.theme
+  );
   const inactiveTheme = activeTheme === "light" ? "dark" : "light";
-  const [styles, setStyles] = React.useState();
-
-  // To fix svg flickering
-
-  React.useEffect(async () => {
-    const lstyles = await import("../styles/Navbar.module.scss");
-    setStyles(lstyles);
-  }, []);
 
   React.useEffect(() => {
     document.body.dataset.theme = activeTheme;
