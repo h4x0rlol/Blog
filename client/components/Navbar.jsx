@@ -72,7 +72,9 @@ const Navbar = ({ children }) => {
             </div>
           </div>
         </header>
-        <div>{children}</div>
+        <main className={styles.main}>
+          <div>{children}</div>
+        </main>
       </>
     </>
   );

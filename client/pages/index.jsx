@@ -10,12 +10,10 @@ const Index = () => {
         <meta keywords="h4x0rlol, cv, blog, resume, portfolio"></meta>
         <title>CV</title>
       </Head>
-      <main className={styles.main}>
-        <div className={styles.container}>
-          <Header />
-          <Projects />
-        </div>
-      </main>
+      <div className={styles.container}>
+        <Header />
+        <Projects />
+      </div>
     </>
   );
 };
