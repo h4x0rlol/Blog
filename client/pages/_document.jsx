@@ -18,7 +18,6 @@ class MyDocument extends Document {
             href="/favicons/favicon.ico"
             type="image/x-icon"
           />
-          <meta charSet="utf-8" />
           <meta
             name="description"
             content="Dmitry Khailov personal portofilo website and blog"
