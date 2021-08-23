@@ -1,7 +1,7 @@
 import styles from "../../styles/Blog.module.scss";
 import Head from "next/head";
 import Link from "next/link";
-import { Articles } from "../../articles/Articles";
+import { Articles } from "../../lib/Articles";
 
 const Blog = () => {
   return (
@@ -14,7 +14,7 @@ const Blog = () => {
       <main className={styles.main}>
         <div className={styles.container}>
           {Articles.map((article) => (
-            <article className={styles.article}>
+            <article key={article.id} className={styles.article}>
               <div className={styles.article_inner}>
                 <div className={styles.wrapper}>
                   <div>
@@ -38,7 +38,9 @@ const Blog = () => {
                   <ul className={styles.article_tags}>
                     <li className={styles.tags_first}>Tags:</li>
                     {article.tags.map((tag) => (
-                      <li className={styles.tags_item}>{tag}</li>
+                      <li key={tag} className={styles.tags_item}>
+                        {tag}
+                      </li>
                     ))}
                   </ul>
                 </div>
