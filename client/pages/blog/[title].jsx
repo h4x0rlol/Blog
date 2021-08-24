@@ -7,7 +7,8 @@ const Article = ({ article }) => {
 
 export const getStaticProps = async (context) => {
   const { title } = context.params;
-  const articleData = getArticleData(title);
+  const articleData = await getArticleData(title);
+
   return {
     props: {
       article: articleData,

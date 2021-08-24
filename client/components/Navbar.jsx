@@ -72,9 +72,6 @@ const Navbar = ({ children }) => {
             </div>
           </div>
         </header>
-        <main className={styles.main}>
-          <div>{children}</div>
-        </main>
       </>
     </>
   );
