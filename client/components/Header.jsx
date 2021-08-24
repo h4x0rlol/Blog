@@ -7,13 +7,13 @@ const Header = () => {
         <div className={styles.header_name}>
           <h2 className={styles.header_name_text}>Dmitry Khailov</h2>
           <div className={styles.header_name_specializaton}>
-            <p>Fullstack Javascript Developer</p>
+            <p>Frontend Javascript Developer</p>
             <div className={styles.header_spoiler}>
               <p>at least would like to be</p>
             </div>
           </div>
         </div>
-        <div className={styles.header_contacts}>
+        <aside className={styles.header_contacts}>
           <ul className={styles.header_contacts_ul}>
             <li className={styles.header_contacts_li}>
               <svg
@@ -31,6 +31,7 @@ const Header = () => {
                 className={styles.header_link}
                 href="https://t.me/h4x0rlol"
                 target="_blank"
+                rel="noreferrer"
               >
                 @h4x0rlol
               </a>
@@ -69,6 +70,7 @@ const Header = () => {
                 className={styles.header_link}
                 href="https://github.com/h4x0rlol"
                 target="_blank"
+                rel="noreferrer"
               >
                 github.com/h4x0rlol
               </a>
@@ -89,7 +91,7 @@ const Header = () => {
               Omsk
             </li>
           </ul>
-        </div>
+        </aside>
       </div>
       <hr className={styles.hr} />
     </div>

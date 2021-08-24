@@ -12,9 +12,6 @@
   margin-bottom: 3rem;
   margin-top: 3rem;
   padding-top: 3rem;
-  // background-color: var(--color-bg-primary);
-  // color: var(--color-text-primary);
-  // transition: all 100ms linear;
 }
 
 .article {
@@ -39,7 +36,6 @@
 
 .name {
   font-size: 0.85rem;
-  text-transform: uppercase;
 }
 
 .article_title {
@@ -47,11 +43,14 @@
   font-weight: 700;
   line-height: 1em;
   font-size: 1.2em;
+  color: var(--color-text-primary);
+  transition: all 100ms linear;
 }
 
 .article_date {
   white-space: nowrap;
   font-size: 0.9rem;
+  transition: all 100ms linear;
 }
 
 .time {

@@ -62,12 +62,13 @@ const Projects = () => {
     <>
       <div className={styles.container}>
         <div className={styles.items}>
-          <div className={styles.project}>
+          <article className={styles.project}>
             <a
               className={styles.item}
               id="item"
               href="https://github.com/h4x0rlol/timesheet"
               target="_blank"
+              rel="noreferrer"
             >
               <svg
                 preserveAspectRatio="xMidYMid slice"
@@ -103,18 +104,19 @@ const Projects = () => {
             </a>
 
             <div className={styles.project_description}>
-              The Time Analyzer, was made for yourself's needs and always under
-              development. Frontend on React, Typescript, Redux, backend on
-              Express, PostgreSQL.
+              The Time Analyzer, was made for yourself&apos;s needs and always
+              under development. Frontend on React, Typescript, Redux, backend
+              on Express, PostgreSQL.
             </div>
-          </div>
+          </article>
 
-          <div className={styles.project}>
+          <article className={styles.project}>
             <a
               className={styles.item}
               id="item"
               href="https://happy-hearts.herokuapp.com/"
               target="_blank"
+              rel="noreferrer"
             >
               <svg
                 preserveAspectRatio="xMidYMid slice"
@@ -154,14 +156,15 @@ const Projects = () => {
               using Yandex Kassa (frontend on React, backend on Express, React
               Admin, and MySQL for database).
             </div>
-          </div>
+          </article>
 
-          <div className={styles.project}>
+          <article className={styles.project}>
             <a
               className={styles.item}
               id="item"
               href="https://github.com/h4x0rlol/gnility"
               target="_blank"
+              rel="noreferrer"
             >
               <svg
                 preserveAspectRatio="xMidYMid slice"
@@ -200,14 +203,15 @@ const Projects = () => {
               Simple WebRTC peer to peer chat on random topics (React, Peerjs,
               Typescript)
             </div>
-          </div>
+          </article>
 
-          <div className={styles.project}>
+          <article className={styles.project}>
             <a
               className={styles.item}
               id="item"
               href="https://github.com/h4x0rlol/darts2bot"
               target="_blank"
+              rel="noreferrer"
             >
               <svg
                 preserveAspectRatio="xMidYMid slice"
@@ -246,14 +250,15 @@ const Projects = () => {
               Telegram darts-game bot using Telegraf.js, Typescript, Nodejs,
               Mysql.
             </div>
-          </div>
+          </article>
 
-          <div className={styles.project}>
+          <article className={styles.project}>
             <a
               className={styles.item}
               id="item"
               href="https://github.com/h4x0rlol/weathermaps"
               target="_blank"
+              rel="noreferrer"
             >
               <svg
                 preserveAspectRatio="xMidYMid slice"
@@ -292,7 +297,7 @@ const Projects = () => {
               React single page Weather Application using OpenWeatherMap API and
               leaflet maps, Chartjs for graphs and Booststrap for styles.
             </div>
-          </div>
+          </article>
         </div>
         <Skills />
       </div>

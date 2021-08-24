@@ -1,15 +1,11 @@
-import dynamic from "next/dynamic";
 import "../styles/global.scss";
-
-const Navbar = dynamic(() => import("../components/Navbar"), {
-  ssr: false,
-});
+import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Navbar>
+    <Layout>
       <Component {...pageProps} />
-    </Navbar>
+    </Layout>
   );
 }
 

@@ -18,64 +18,61 @@ const Navbar = ({ children }) => {
 
   return (
     <>
-      {styles && (
-        <>
-          <header className={styles.navbar}>
-            <div className={styles.navbar_container}>
-              <h1 className={styles.navbar_name}>h4x0rlol</h1>
-              <div className={styles.navbar_buttons}>
-                <Link href="/blog">
-                  <a
-                    className={
-                      router.pathname == "/blog"
-                        ? styles.active_link
-                        : styles.inactive_link
-                    }
-                  >
-                    Blog
-                  </a>
-                </Link>
-                <Link href="/">
-                  <a
-                    className={
-                      router.pathname == "/"
-                        ? styles.active_link
-                        : styles.inactive_link
-                    }
-                  >
-                    CV
-                  </a>
-                </Link>
-              </div>
-              <div className={styles.navbar_buttons}>
-                <div className={styles.navbar_theme}>
-                  <label className={styles.navbar_theme_switcher}>
-                    <input
-                      type="checkbox"
-                      onChange={() => setActiveTheme(inactiveTheme)}
-                    />
-                    <div>
-                      <i>
-                        <FontAwesomeIcon icon={faSun} />
-                      </i>
-                      <i>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className={styles.switcher_arrow}
-                        />
-                      </i>
-                      <i>
-                        <FontAwesomeIcon icon={faMoon} />
-                      </i>
-                    </div>
-                  </label>
-                </div>
+      <>
+        <header className={styles.navbar}>
+          <div className={styles.navbar_container}>
+            <h1 className={styles.navbar_name}>h4x0rlol</h1>
+            <nav className={styles.navbar_buttons}>
+              <Link href="/blog">
+                <a
+                  className={
+                    router.pathname == "/blog"
+                      ? styles.active_link
+                      : styles.inactive_link
+                  }
+                >
+                  Blog
+                </a>
+              </Link>
+              <Link href="/">
+                <a
+                  className={
+                    router.pathname == "/"
+                      ? styles.active_link
+                      : styles.inactive_link
+                  }
+                >
+                  CV
+                </a>
+              </Link>
+            </nav>
+            <div className={styles.navbar_buttons}>
+              <div className={styles.navbar_theme}>
+                <label className={styles.navbar_theme_switcher}>
+                  <input
+                    type="checkbox"
+                    onChange={() => setActiveTheme(inactiveTheme)}
+                  />
+                  <div>
+                    <i>
+                      <FontAwesomeIcon icon={faSun} />
+                    </i>
+                    <i>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className={styles.switcher_arrow}
+                      />
+                    </i>
+                    <i>
+                      <FontAwesomeIcon icon={faMoon} />
+                    </i>
+                  </div>
+                </label>
               </div>
             </div>
-          </header>
-          <div>{children}</div>
-        </>
-      )}
+          </div>
+        </header>
+      </>
     </>
   );
 };
