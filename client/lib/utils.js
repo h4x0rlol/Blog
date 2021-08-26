@@ -20,13 +20,12 @@ export async function getArticleData(filename) {
   const filePath = path.join(articlesDirectory, `${articleTitle}.md`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
 
-  const { data, content } = matter(fileContent);
+  const { content } = matter(fileContent);
 
   const contentToHtml = await markdownToHtml(content || "");
 
   const articleData = {
     title: articleTitle,
-    ...data,
     content: contentToHtml,
   };
 

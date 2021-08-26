@@ -10,7 +10,13 @@ const Navbar = ({ children }) => {
   const [activeTheme, setActiveTheme] = React.useState(
     document.body.dataset.theme
   );
+  const [isChecked, setIsChecked] = React.useState(false);
   const inactiveTheme = activeTheme === "light" ? "dark" : "light";
+
+  const handleThemeChange = () => {
+    setIsChecked((prev) => !prev);
+    setActiveTheme(inactiveTheme);
+  };
 
   React.useEffect(() => {
     document.body.dataset.theme = activeTheme;
@@ -47,11 +53,21 @@ const Navbar = ({ children }) => {
               </Link>
             </nav>
             <div className={styles.navbar_buttons}>
-              <div className={styles.navbar_theme}>
+              <div
+                className={styles.navbar_theme}
+                tabIndex="0"
+                onKeyPress={(e) => {
+                  e.preventDefault();
+                  if (e.key === " " || e.key === "Spacebar") {
+                    handleThemeChange();
+                  }
+                }}
+              >
                 <label className={styles.navbar_theme_switcher}>
                   <input
                     type="checkbox"
-                    onChange={() => setActiveTheme(inactiveTheme)}
+                    checked={isChecked}
+                    onChange={handleThemeChange}
                   />
                   <div>
                     <i>
