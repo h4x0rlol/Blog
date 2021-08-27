@@ -8,7 +8,7 @@ const Index = () => {
     <>
       <Head>
         <meta keywords="h4x0rlol, cv, blog, resume, portfolio"></meta>
-        <title>CV</title>
+        <title>About</title>
       </Head>
       <div className={styles.container}>
         <Header />
