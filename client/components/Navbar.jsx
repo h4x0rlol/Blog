@@ -48,7 +48,7 @@ const Navbar = ({ children }) => {
                       : styles.inactive_link
                   }
                 >
-                  CV
+                  About
                 </a>
               </Link>
             </nav>

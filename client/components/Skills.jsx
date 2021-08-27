@@ -7,9 +7,7 @@ const Skills = () => {
         <h3 className={styles.section_header}>Education</h3>
         <ul className={styles.section_ul}>
           <li className={styles.section_li}>
-            <div className={styles.degree}>
-              Bachelor in Informatics and Computer Engineering
-            </div>
+            <div className={styles.degree}>Bachelor in Computer Science</div>
             <div className={styles.university}>
               Omsk State Transport University
             </div>
