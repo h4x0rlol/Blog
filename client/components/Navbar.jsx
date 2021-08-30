@@ -10,7 +10,9 @@ const Navbar = ({ children }) => {
   const [activeTheme, setActiveTheme] = React.useState(
     document.body.dataset.theme
   );
-  const [isChecked, setIsChecked] = React.useState(false);
+  const [isChecked, setIsChecked] = React.useState(
+    activeTheme === "light" ? true : false
+  );
   const inactiveTheme = activeTheme === "light" ? "dark" : "light";
 
   const handleThemeChange = () => {
@@ -20,6 +22,7 @@ const Navbar = ({ children }) => {
 
   React.useEffect(() => {
     document.body.dataset.theme = activeTheme;
+    window.localStorage.setItem("theme", activeTheme);
   }, [activeTheme]);
 
   return (
@@ -55,6 +58,9 @@ const Navbar = ({ children }) => {
             <div className={styles.navbar_buttons}>
               <div
                 className={styles.navbar_theme}
+                aria-label={`Change to ${inactiveTheme} mode`}
+                title={`Change to ${inactiveTheme} mode`}
+                type="button"
                 tabIndex="0"
                 onKeyPress={(e) => {
                   e.preventDefault();
@@ -70,7 +76,7 @@ const Navbar = ({ children }) => {
                     onChange={handleThemeChange}
                   />
                   <div>
-                    <i>
+                    <i className={styles.switcher_sun}>
                       <FontAwesomeIcon icon={faSun} />
                     </i>
                     <i>
@@ -79,7 +85,7 @@ const Navbar = ({ children }) => {
                         className={styles.switcher_arrow}
                       />
                     </i>
-                    <i>
+                    <i className={styles.switcher_moon}>
                       <FontAwesomeIcon icon={faMoon} />
                     </i>
                   </div>

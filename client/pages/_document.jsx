@@ -8,7 +8,15 @@ class MyDocument extends Document {
 
   render() {
     const setInitialTheme = `
-    document.body.dataset.theme = 'dark';
+    function getUserPreference() {
+      if(window.localStorage.getItem('theme')) {
+        return window.localStorage.getItem('theme')
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light'
+    }
+    document.body.dataset.theme = getUserPreference();
   `;
     return (
       <Html lang="en">

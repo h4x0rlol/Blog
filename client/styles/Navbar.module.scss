@@ -75,8 +75,13 @@
           transform: rotate(-180deg);
         }
 
-        > :first-child {
-          color: var(--color-text-secondary);
+        .switcher_sun {
+          color: var(--color-text-active);
+          transition: all 100ms linear;
+        }
+
+        .switcher_moon {
+          color: var(--color-text-inactive);
           transition: all 100ms linear;
         }
       }
@@ -84,8 +89,13 @@
 
     &:not(:checked) {
       + div {
-        > :last-child {
-          color: var(--color-text-secondary);
+        .switcher_sun {
+          color: var(--color-text-inactive);
+          transition: all 100ms linear;
+        }
+
+        .switcher_moon {
+          color: var(--color-text-active);
           transition: all 100ms linear;
         }
       }
@@ -94,12 +104,12 @@
 }
 
 .active_link {
-  color: var(--color-text-secondary);
+  color: var(--color-text-active);
   transition: all 100ms linear;
 }
 
 .inactive_link {
-  color: var(--color-text-primary);
+  color: var(--color-text-inactive);
   transition: all 100ms linear;
 }
 
