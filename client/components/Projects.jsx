@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const Projects = () => {
   const [items, setItems] = React.useState([]);
   const [divref, divinView] = useInView({
-    triggerOnce: true,
+    // triggerOnce: true,
     rootMargin: "-50px 0px",
   });
 

@@ -2,7 +2,7 @@ export const Articles = [
   {
     id: 1,
     title: "Watch some metrics using Raspberry and React",
-    link: "archlinux-ryzen-setup",
+    link: "react-raspberry-dashboard",
     tags: [
       "Raspberry Pi",
       "React",
@@ -11,7 +11,7 @@ export const Articles = [
       "Linux",
       "TailwindCSS",
     ],
-    date: "August 22, 2021",
+    date: "December 29, 2021",
   },
   {
     id: 2,
