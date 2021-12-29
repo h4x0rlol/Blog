@@ -28,7 +28,7 @@ class MyDocument extends Document {
           />
           <meta
             name="description"
-            content="Dmitry Khailov personal portofilo website and blog"
+            content="Dmitriy Khailov personal portofilo website and blog"
           ></meta>
         </Head>
         <body>
