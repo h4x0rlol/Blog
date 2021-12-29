@@ -5,7 +5,7 @@ const Header = () => {
     <div className={styles.header}>
       <div className={styles.header_content}>
         <div className={styles.header_name}>
-          <h2 className={styles.header_name_text}>Dmitry Khailov</h2>
+          <h2 className={styles.header_name_text}>Dmitriy Khailov</h2>
           <div className={styles.header_name_specializaton}>
             <p>Senior Procrastinator</p>
             <div className={styles.header_spoiler}>

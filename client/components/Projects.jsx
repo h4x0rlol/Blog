@@ -66,7 +66,7 @@ const Projects = () => {
             <a
               className={styles.item}
               id="item"
-              href="https://github.com/h4x0rlol/timesheet"
+              href="https://github.com/h4x0rlol/react-raspberry-dashboard"
               target="_blank"
               rel="noreferrer"
             >
@@ -87,8 +87,15 @@ const Projects = () => {
                   </clipPath>
                 </defs>
 
+                <text className={styles.svg_text} dy=".3em" x="50%" y="35%">
+                  React
+                </text>
                 <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
-                  Timesheet
+                  Raspberry
+                </text>
+
+                <text className={styles.svg_text} dy=".3em" x="50%" y="65%">
+                  Dashboard
                 </text>
 
                 <g clipPath="url(#clip-0)">
@@ -97,16 +104,15 @@ const Projects = () => {
                     height="100%"
                     preserveAspectRatio="xMidYMid"
                     width="100%"
-                    href="/img/timesheet.png"
+                    href="/img/react-raspberry-dashboard.png"
                   ></image>
                 </g>
               </svg>
             </a>
 
             <div className={styles.project_description}>
-              The Time Analyzer, was made for yourself&apos;s needs and always
-              under development. Frontend on React, Typescript, Redux, backend
-              on Express, PostgreSQL.
+              Simple dashboard to monitor room air quality, weather,
+              cryptocurrencies and... whatever you want (just add some API`s).
             </div>
           </article>
 
