@@ -92,14 +92,6 @@
   transition: all 100ms linear;
 }
 
-.footer_text {
-  display: flex;
-  justify-content: center;
-  font-variant: small-caps;
-  padding-top: 0.5rem;
-  height: 1vh;
-}
-
 @media (max-width: 480px) {
   .container {
     flex-direction: column-reverse;

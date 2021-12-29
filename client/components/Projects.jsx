@@ -8,7 +8,7 @@ const Projects = () => {
   const [items, setItems] = React.useState([]);
   const [divref, divinView] = useInView({
     triggerOnce: true,
-    rootMargin: "-60px 0px",
+    rootMargin: "-50px 0px",
   });
 
   React.useEffect(() => {
@@ -309,9 +309,6 @@ const Projects = () => {
         transition={{ duration: 0.8 }}
       >
         <hr className={styles.hr} />
-        <div className={styles.footer_text}>
-          Wow! You scrolled the whole page!
-        </div>
       </motion.footer>
     </>
   );
