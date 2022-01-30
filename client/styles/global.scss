@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Source Sans Pro";
   src: url(../fonts/SourceSansPro-Regular.ttf);
+  font-display: auto;
 }
 
 * {
@@ -13,7 +14,6 @@
   font-family: "Source Sans Pro", sans-serif;
   line-height: 1.618;
   font-weight: bold;
-  font-display: swap;
 }
 
 body {
