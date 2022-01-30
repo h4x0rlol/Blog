@@ -26,9 +26,23 @@
   max-width: 75%;
 }
 
+.header {
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 1rem;
+  font-size: 1.125rem;
+  letter-spacing: 0.15rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  transition: all 100ms linear;
+  text-align: center;
+}
+
 .item {
   display: flex;
   align-items: center;
+  align-self: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
@@ -95,6 +109,7 @@
 @media (max-width: 480px) {
   .container {
     flex-direction: column-reverse;
+    padding-left: 0.2rem;
   }
 
   .project_description {
@@ -108,6 +123,23 @@
     max-width: 100%;
     flex: 0;
     margin-left: -6px;
+  }
+
+  .header {
+    text-align: left;
+    margin-left: 0.7rem;
+  }
+
+  .header::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 100%;
+    background: var(--color-text-secondary);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 100ms linear;
   }
 
   .project {

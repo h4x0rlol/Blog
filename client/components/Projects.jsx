@@ -62,6 +62,7 @@ const Projects = () => {
     <>
       <div className={styles.container}>
         <div className={styles.items}>
+          <h3 className={styles.header}>Open Source</h3>
           <article className={styles.project}>
             <a
               className={styles.item}
