@@ -105,7 +105,7 @@ const Projects = () => {
                     height="100%"
                     preserveAspectRatio="xMidYMid"
                     width="100%"
-                    href="/img/react-raspberry-dashboard.png"
+                    href="/img/react-raspberry-dashboard.jpg"
                   ></image>
                 </g>
               </svg>
@@ -200,7 +200,7 @@ const Projects = () => {
                     height="100%"
                     preserveAspectRatio="xMidYMid"
                     width="100%"
-                    href="/img/gnility.jpg"
+                    href="/img/gnility.png"
                   ></image>
                 </g>
               </svg>
@@ -247,7 +247,7 @@ const Projects = () => {
                     height="100%"
                     preserveAspectRatio="xMidYMid"
                     width="100%"
-                    href="/img/darts2bot.jpg"
+                    href="/img/darts2bot.png"
                   ></image>
                 </g>
               </svg>
