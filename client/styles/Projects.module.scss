@@ -14,6 +14,8 @@
 
 .project_description {
   display: flex;
+  font-weight: 300;
+  flex-direction: column;
   align-self: center;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -37,6 +39,11 @@
   font-weight: 700;
   transition: all 100ms linear;
   text-align: center;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--color-text-secondary);
 }
 
 .item {

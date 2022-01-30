@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import styles from "../styles/Projects.module.scss";
 import Skills from "./Skills";
 import { useInView } from "react-intersection-observer";
@@ -112,8 +113,14 @@ const Projects = () => {
             </a>
 
             <div className={styles.project_description}>
-              Simple dashboard to monitor room air quality, weather,
-              cryptocurrencies and... whatever you want (just add some API`s).
+              <p>
+                Simple dashboard to monitor room air quality, weather,
+                cryptocurrencies and... whatever you want (just add some API`s).{" "}
+                Detailed guide how to make it{" "}
+                <Link href="/blog/react-raspberry-dashboard">
+                  <a className={styles.link}>here.</a>
+                </Link>
+              </p>
             </div>
           </article>
 
