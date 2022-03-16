@@ -72,13 +72,14 @@
 
 .tags_first {
   float: left;
+  margin-right: 5px;
   color: var(--color-text-tags);
   transition: all 100ms linear;
 }
 
 .tags_item {
   float: left;
-  margin-left: 5px;
+  margin-right: 5px;
   color: var(--color-text-tags);
   transition: all 100ms linear;
 }
