@@ -1,9 +1,9 @@
-import React from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import React from "react";
+import { useInView } from "react-intersection-observer";
 import styles from "../styles/Projects.module.scss";
 import Skills from "./Skills";
-import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
 
 const Projects = () => {
   const [items, setItems] = React.useState([]);
@@ -64,6 +64,54 @@ const Projects = () => {
       <div className={styles.container}>
         <div className={styles.items}>
           <h3 className={styles.header}>Open Source</h3>
+
+          <article className={styles.project}>
+            <a
+              className={styles.item}
+              id="item"
+              href="https://github.com/h4x0rlol/dra.ws"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <svg
+                preserveAspectRatio="xMidYMid slice"
+                viewBox="0 0 300 200"
+                className={styles.svg}
+              >
+                <defs>
+                  <clipPath id="clip-0">
+                    <circle
+                      cx={0}
+                      cy={0}
+                      fill="#000"
+                      r="150px"
+                      className={styles.circle}
+                    ></circle>
+                  </clipPath>
+                </defs>
+
+                <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
+                  DRA.WS
+                </text>
+
+                <g clipPath="url(#clip-0)">
+                  <image
+                    className={styles.image}
+                    height="100%"
+                    preserveAspectRatio="xMidYMid"
+                    width="100%"
+                    href="/img/draws.gif"
+                  ></image>
+                </g>
+              </svg>
+            </a>
+
+            <div className={styles.project_description}>
+              Draw together in real time on canvas (without libraries) through
+              WebSockets
+            </div>
+          </article>
+
           <article className={styles.project}>
             <a
               className={styles.item}
@@ -78,7 +126,7 @@ const Projects = () => {
                 className={styles.svg}
               >
                 <defs>
-                  <clipPath id="clip-0">
+                  <clipPath id="clip-1">
                     <circle
                       cx={0}
                       cy={0}
@@ -100,7 +148,7 @@ const Projects = () => {
                   Dashboard
                 </text>
 
-                <g clipPath="url(#clip-0)">
+                <g clipPath="url(#clip-1)">
                   <image
                     className={styles.image}
                     height="100%"
@@ -138,7 +186,7 @@ const Projects = () => {
                 className={styles.svg}
               >
                 <defs>
-                  <clipPath id="clip-1">
+                  <clipPath id="clip-2">
                     <circle
                       cx={0}
                       cy={0}
@@ -153,7 +201,7 @@ const Projects = () => {
                   Happy Hearts
                 </text>
 
-                <g clipPath="url(#clip-1)">
+                <g clipPath="url(#clip-2)">
                   <image
                     className={styles.image}
                     height="100%"
@@ -186,7 +234,7 @@ const Projects = () => {
                 className={styles.svg}
               >
                 <defs>
-                  <clipPath id="clip-2">
+                  <clipPath id="clip-3">
                     <circle
                       cx={0}
                       cy={0}
@@ -201,7 +249,7 @@ const Projects = () => {
                   Gnility
                 </text>
 
-                <g clipPath="url(#clip-2)">
+                <g clipPath="url(#clip-3)">
                   <image
                     className={styles.image}
                     height="100%"
@@ -233,7 +281,7 @@ const Projects = () => {
                 className={styles.svg}
               >
                 <defs>
-                  <clipPath id="clip-3">
+                  <clipPath id="clip-4">
                     <circle
                       cx={0}
                       cy={0}
@@ -248,7 +296,7 @@ const Projects = () => {
                   darts2bot
                 </text>
 
-                <g clipPath="url(#clip-3)">
+                <g clipPath="url(#clip-4)">
                   <image
                     className={styles.image}
                     height="100%"
@@ -280,7 +328,7 @@ const Projects = () => {
                 className={styles.svg}
               >
                 <defs>
-                  <clipPath id="clip-4">
+                  <clipPath id="clip-5">
                     <circle
                       cx={0}
                       cy={0}
@@ -295,7 +343,7 @@ const Projects = () => {
                   WeatherMaps
                 </text>
 
-                <g clipPath="url(#clip-4)">
+                <g clipPath="url(#clip-5)">
                   <image
                     className={styles.image}
                     height="100%"
