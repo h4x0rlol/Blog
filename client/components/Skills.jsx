@@ -7,11 +7,11 @@ const Skills = () => {
         <h3 className={styles.section_header}>Education</h3>
         <ul className={styles.section_ul}>
           <li className={styles.section_li}>
-            <div className={styles.degree}>Bachelor in Computer Science</div>
+            <div className={styles.degree}>Master in Computer Science</div>
             <div className={styles.university}>
               Omsk State Transport University
             </div>
-            <div className={styles.education_years}>2018 - 2022</div>
+            <div className={styles.education_years}>2018 - 2024</div>
           </li>
         </ul>
       </section>
@@ -39,7 +39,7 @@ const Skills = () => {
           <ul className={styles.section_ul}>
             <li className={styles.section_li}>Javascript, Typescript</li>
             <li className={styles.section_li}>React, React Native</li>
-            <li className={styles.section_li}>Redux, Mobx, Apollo</li>
+            <li className={styles.section_li}>Redux, Mobx</li>
             <li className={styles.section_li}>Next.js</li>
             <li className={styles.section_li}>
               Websockets, REST, GraphQL, WebRTC
