@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic";
 import styles from "../styles/Article.module.scss";
 
 const ArticleContent = ({ article }) => {

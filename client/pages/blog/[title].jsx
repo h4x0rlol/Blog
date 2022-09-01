@@ -1,9 +1,13 @@
 import Head from "next/head";
-import { getArticleData, getArticlesFiles } from "../../lib/utils";
+import { useRouter } from "next/router";
 import ArticleContent from "../../components/ArticleContent";
+import CommentSection from "../../components/CommentSection";
 import { Articles } from "../../lib/Articles";
+import { getArticleData, getArticlesFiles } from "../../lib/utils";
 
 const Article = ({ article }) => {
+  const { asPath } = useRouter();
+
   const extractPageTitle = (title) => {
     return Articles.filter((article) => article.link === title)[0].title;
   };
@@ -22,6 +26,12 @@ const Article = ({ article }) => {
       </Head>
       <main>
         <ArticleContent article={article} />
+        <CommentSection
+          shortname={"h4x0rlol"}
+          url={`https://h4x0rlol.me${asPath}`}
+          id={article.id}
+          title={article.title}
+        />
       </main>
     </>
   );
