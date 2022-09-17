@@ -1,0 +1,24 @@
+a {
+  text-decoration: none;
+  color: var(--color-text-secondary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 300;
+  line-height: 1.618;
+}
+
+code {
+  background: var(--color-border-secondary);
+}
+
+hr {
+  padding: 0;
+  margin: 24px 0;
+  border: 0;
+  border-top: 1px solid var(--color-border-primary);
+}
