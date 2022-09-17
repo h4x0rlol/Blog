@@ -14,32 +14,32 @@
 
 ##### (information from arch wiki and [there](https://askubuntu.com/questions/1164206/lm-sensors-and-amd-ryzen-x570-chipset "there"))
 
-### 1. `sudo vim /etc/default/grub` or open it with your editor
+- ### `sudo vim /etc/default/grub` or open it with your editor
 
-### 2. Find this line `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"` and add to it this
+- ### Find this line `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"` and add to it this
 
 `acpi_enforce_resources=lax`
 
-### It will looks like this now `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_enforce_resources=lax"`
+- ### It will looks like this now `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_enforce_resources=lax"`
 
-### 3. Save and exit your editor, then run `sudo update-grub`
+- ### Save and exit your editor, then run `sudo update-grub`
 
-### 4. Reboot your pc
+- ### Reboot your pc
 
-### 5. Now run `git clone https://github.com/h4x0rlol/archlinux-ryzen-setup.git`
+- ### Now run `git clone https://github.com/h4x0rlol/archlinux-ryzen-setup.git`
 
-### 6. `cd archlinux-ryzen-setup`
+- ### `cd archlinux-ryzen-setup`
 
-### 7. Run `./setup.sh` (press enter and type yes when it asks)
+- ### Run `./setup.sh` (press enter and type yes when it asks)
 
-### 8. Now run `sudo modprobe it87 force_id=0x8686` or `sudo modprobe it87 force_id=0x8628` ([8628](https://github.com/a1wong/it87/issues/1 "8628"))
+- ### Now run `sudo modprobe it87 force_id=0x8686` or `sudo modprobe it87 force_id=0x8628` ([8628](https://github.com/a1wong/it87/issues/1 "8628"))
 
-### 9. Now run `sudo sensors-detect` and press enter everytime
+- ### Now run `sudo sensors-detect` and press enter everytime
 
-### 10. `sensors` and `zenmonitor` now should show actual temps and voltage
+- ### `sensors` and `zenmonitor` now should show actual temps and voltage
 
 ---
 
 ## To fix noisy cpu fan and random type freezes:
 
-### 1. Turn off Core Performance Boost in BIOS
+- ### Turn off Core Performance Boost in BIOS
