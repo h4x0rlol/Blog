@@ -27,9 +27,37 @@ const Projects = () => {
       document.querySelectorAll("#item") &&
       !isTouchDevice
     ) {
-      console.log(isTouchDevice);
       const point = document.querySelector("svg").createSVGPoint();
       const litems = document.querySelectorAll("#item");
+
+      class Item {
+        constructor(config) {
+          Object.keys(config).forEach((item) => {
+            this[item] = config[item];
+          }, this);
+
+          this.el.addEventListener(
+            "mousemove",
+            this.mouseMoveHandler.bind(this)
+          );
+        }
+
+        update(c) {
+          this.clip.setAttribute("cx", c.x);
+          this.clip.setAttribute("cy", c.y);
+        }
+
+        getCoordinates(e, svg) {
+          point.x = e.clientX;
+          point.y = e.clientY;
+          return point.matrixTransform(svg.getScreenCTM().inverse());
+        }
+
+        mouseMoveHandler(e) {
+          this.update(this.getCoordinates(e, this.svg));
+        }
+      }
+
       litems.forEach((item, index) => {
         setItems((prev) => [
           ...prev,
@@ -40,32 +68,6 @@ const Projects = () => {
           }),
         ]);
       });
-      const getCoordinates = (e, svg) => {
-        point.x = e.clientX;
-        point.y = e.clientY;
-        return point.matrixTransform(svg.getScreenCTM().inverse());
-      };
-      Item.prototype = {
-        update: function update(c) {
-          this.clip.setAttribute("cx", c.x);
-          this.clip.setAttribute("cy", c.y);
-        },
-        mouseMoveHandler: function mouseMoveHandler(e) {
-          this.update(getCoordinates(e, this.svg));
-        },
-        touchMoveHandler: function touchMoveHandler(e) {
-          e.preventDefault();
-          var touch = e.targetTouches[0];
-          if (touch) return this.update(getCoordinates(touch, this.svg));
-        },
-      };
-      function Item(config) {
-        Object.keys(config).forEach(function (item) {
-          this[item] = config[item];
-        }, this);
-        this.el.addEventListener("mousemove", this.mouseMoveHandler.bind(this));
-        this.el.addEventListener("touchmove", this.touchMoveHandler.bind(this));
-      }
     }
   }, []);
 
