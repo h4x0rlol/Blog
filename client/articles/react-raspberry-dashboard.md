@@ -24,16 +24,20 @@
 
 - ### Reserve the IP-address of Pi in the DHCP table of your router (mine is 192.168.0.102)
 - ### Connect to your Pi via ssh `ssh pi@192.168.0.102`
-- ### Install required dependecies
-  - ### `sudo apt-get update`
-  - ### `sudo apt-get upgrade`
-  - ### `sudo apt install build-essential python-dev git`
-  - ### `git clone https://github.com/adafruit/Adafruit_Python_DHT`
-  - ### `cd Adafruit_Python_DHT`
-  - ### `sudo python setup.py install`
-  - ### To check the sensors is working
-    - ### `cd /home/pi/Adafruit_Python_DHT/examples`
-    - ### then `./AdafruitDHT.py 22 4` you should see output like this `Temp=25.1* Humidity=25.4%`
+
+### Install required dependecies
+
+- ### `sudo apt-get update`
+- ### `sudo apt-get upgrade`
+- ### `sudo apt install build-essential python-dev git`
+- ### `git clone Adafruit_Python_DHT library`
+- ### `cd Adafruit_Python_DHT`
+- ### `sudo python setup.py install`
+
+### To check the sensors is working
+
+- ### `cd /home/pi/Adafruit_Python_DHT/examples`
+- ### then `./AdafruitDHT.py 22 4` you should see output like this `Temp=25.1* Humidity=25.4%`
 - ### [ Install Nodejs and yarn](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04 " Install Nodejs and yarn")
 - ### Install serve package globally to serve our frontend `sudo yarn global add serve`
 
@@ -43,9 +47,11 @@
 - ### `cd server`, create .env with your API keys (like in .env.example), `yarn`, `yarn start`
 - ### `cd .. && cd frontend`, `yarn`, `yarn build`, `serve -s build`
 - ### Now go to your Pi adress:3000 with any device in your network to see dashboard
-- ### Add dashboard to Raspberry startup
-  - ### `sudo nano /etc/rc.local`
-  - ### add the folowing lines
-    ### `(cd /home/pi/fun/react-raspberry-dashboard/client; serve -s build) & (cd /home/pi/fun/react-raspberry-dashboard/server; yarn start) &`
-  - ### then `sudo reboot`
+
+### Add dashboard to Raspberry startup
+
+- ### `sudo nano /etc/rc.local`
+- ### add the folowing lines
+  ### `(cd /home/pi/fun/react-raspberry-dashboard/client; serve -s build) & (cd /home/pi/fun/react-raspberry-dashboard/server; yarn start) &`
+- ### then `sudo reboot`
 - ### Now our server and client should start on the Pi startup
