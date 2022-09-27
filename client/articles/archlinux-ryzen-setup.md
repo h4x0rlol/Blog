@@ -16,9 +16,7 @@
 
 - ### `sudo vim /etc/default/grub` or open it with your editor
 
-- ### Find this line `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"` and add to it this
-
-`acpi_enforce_resources=lax`
+- ### Find this line `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"` and add to it this `acpi_enforce_resources=lax`
 
 - ### It will looks like this now `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_enforce_resources=lax"`
 
