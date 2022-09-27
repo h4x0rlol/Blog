@@ -87,6 +87,11 @@
   transform-origin: 50% 50%;
 }
 
+.mobile_image {
+  transform: scale(1.1);
+  transform-origin: 50% 50%;
+}
+
 .svg_text {
   fill: var(--color-text-secondary);
   font-size: 1.1rem;

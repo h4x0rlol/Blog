@@ -1,3 +1,4 @@
+import cn from "classnames";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
@@ -7,16 +8,28 @@ import Skills from "./Skills";
 
 const Projects = () => {
   const [items, setItems] = React.useState([]);
+  const [isTouch, setIsTouch] = React.useState(false);
   const [divref, divinView] = useInView({
     // triggerOnce: true,
     rootMargin: "-50px 0px",
   });
 
   React.useEffect(() => {
-    if (document.querySelector("svg") && document.querySelectorAll("#item")) {
+    const isTouchDevice =
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0 ||
+      navigator.msMaxTouchPoints > 0;
+
+    setIsTouch(isTouchDevice);
+
+    if (
+      document.querySelector("svg") &&
+      document.querySelectorAll("#item") &&
+      !isTouchDevice
+    ) {
+      console.log(isTouchDevice);
       const point = document.querySelector("svg").createSVGPoint();
       const litems = document.querySelectorAll("#item");
-
       litems.forEach((item, index) => {
         setItems((prev) => [
           ...prev,
@@ -27,13 +40,11 @@ const Projects = () => {
           }),
         ]);
       });
-
       const getCoordinates = (e, svg) => {
         point.x = e.clientX;
         point.y = e.clientY;
         return point.matrixTransform(svg.getScreenCTM().inverse());
       };
-
       Item.prototype = {
         update: function update(c) {
           this.clip.setAttribute("cx", c.x);
@@ -48,7 +59,6 @@ const Projects = () => {
           if (touch) return this.update(getCoordinates(touch, this.svg));
         },
       };
-
       function Item(config) {
         Object.keys(config).forEach(function (item) {
           this[item] = config[item];
@@ -78,25 +88,31 @@ const Projects = () => {
                 viewBox="0 0 300 200"
                 className={styles.svg}
               >
-                <defs>
-                  <clipPath id="clip-0">
-                    <circle
-                      cx={0}
-                      cy={0}
-                      fill="#000"
-                      r="150px"
-                      className={styles.circle}
-                    ></circle>
-                  </clipPath>
-                </defs>
-
-                <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
-                  DRA.WS
-                </text>
+                {!isTouch && (
+                  <>
+                    <defs>
+                      <clipPath id="clip-0">
+                        <circle
+                          cx={0}
+                          cy={0}
+                          fill="#000"
+                          r="150px"
+                          className={styles.circle}
+                        ></circle>
+                      </clipPath>
+                    </defs>
+                    <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
+                      DRA.WS
+                    </text>
+                  </>
+                )}
 
                 <g clipPath="url(#clip-0)">
                   <image
-                    className={styles.image}
+                    className={cn({
+                      [styles.mobile_image]: isTouch,
+                      [styles.image]: !isTouch,
+                    })}
                     height="100%"
                     preserveAspectRatio="xMidYMid"
                     width="100%"
@@ -125,32 +141,39 @@ const Projects = () => {
                 viewBox="0 0 300 200"
                 className={styles.svg}
               >
-                <defs>
-                  <clipPath id="clip-1">
-                    <circle
-                      cx={0}
-                      cy={0}
-                      fill="#000"
-                      r="150px"
-                      className={styles.circle}
-                    ></circle>
-                  </clipPath>
-                </defs>
+                {!isTouch && (
+                  <>
+                    <defs>
+                      <clipPath id="clip-1">
+                        <circle
+                          cx={0}
+                          cy={0}
+                          fill="#000"
+                          r="150px"
+                          className={styles.circle}
+                        ></circle>
+                      </clipPath>
+                    </defs>
 
-                <text className={styles.svg_text} dy=".3em" x="50%" y="35%">
-                  React
-                </text>
-                <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
-                  Raspberry
-                </text>
+                    <text className={styles.svg_text} dy=".3em" x="50%" y="35%">
+                      React
+                    </text>
+                    <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
+                      Raspberry
+                    </text>
 
-                <text className={styles.svg_text} dy=".3em" x="50%" y="65%">
-                  Dashboard
-                </text>
+                    <text className={styles.svg_text} dy=".3em" x="50%" y="65%">
+                      Dashboard
+                    </text>
+                  </>
+                )}
 
                 <g clipPath="url(#clip-1)">
                   <image
-                    className={styles.image}
+                    className={cn({
+                      [styles.mobile_image]: isTouch,
+                      [styles.image]: !isTouch,
+                    })}
                     height="100%"
                     preserveAspectRatio="xMidYMid"
                     width="100%"
@@ -185,25 +208,32 @@ const Projects = () => {
                 viewBox="0 0 300 200"
                 className={styles.svg}
               >
-                <defs>
-                  <clipPath id="clip-2">
-                    <circle
-                      cx={0}
-                      cy={0}
-                      fill="#000"
-                      r="150px"
-                      className={styles.circle}
-                    ></circle>
-                  </clipPath>
-                </defs>
+                {!isTouch && (
+                  <>
+                    <defs>
+                      <clipPath id="clip-2">
+                        <circle
+                          cx={0}
+                          cy={0}
+                          fill="#000"
+                          r="150px"
+                          className={styles.circle}
+                        ></circle>
+                      </clipPath>
+                    </defs>
 
-                <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
-                  Happy Hearts
-                </text>
+                    <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
+                      Happy Hearts
+                    </text>
+                  </>
+                )}
 
                 <g clipPath="url(#clip-2)">
                   <image
-                    className={styles.image}
+                    className={cn({
+                      [styles.mobile_image]: isTouch,
+                      [styles.image]: !isTouch,
+                    })}
                     height="100%"
                     preserveAspectRatio="xMidYMid"
                     width="100%"
@@ -233,25 +263,32 @@ const Projects = () => {
                 viewBox="0 0 300 200"
                 className={styles.svg}
               >
-                <defs>
-                  <clipPath id="clip-3">
-                    <circle
-                      cx={0}
-                      cy={0}
-                      fill="#000"
-                      r="150px"
-                      className={styles.circle}
-                    ></circle>
-                  </clipPath>
-                </defs>
+                {!isTouch && (
+                  <>
+                    <defs>
+                      <clipPath id="clip-3">
+                        <circle
+                          cx={0}
+                          cy={0}
+                          fill="#000"
+                          r="150px"
+                          className={styles.circle}
+                        ></circle>
+                      </clipPath>
+                    </defs>
 
-                <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
-                  Gnility
-                </text>
+                    <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
+                      Gnility
+                    </text>
+                  </>
+                )}
 
                 <g clipPath="url(#clip-3)">
                   <image
-                    className={styles.image}
+                    className={cn({
+                      [styles.mobile_image]: isTouch,
+                      [styles.image]: !isTouch,
+                    })}
                     height="100%"
                     preserveAspectRatio="xMidYMid"
                     width="100%"
@@ -280,25 +317,32 @@ const Projects = () => {
                 viewBox="0 0 300 200"
                 className={styles.svg}
               >
-                <defs>
-                  <clipPath id="clip-4">
-                    <circle
-                      cx={0}
-                      cy={0}
-                      fill="#000"
-                      r="150px"
-                      className={styles.circle}
-                    ></circle>
-                  </clipPath>
-                </defs>
+                {!isTouch && (
+                  <>
+                    <defs>
+                      <clipPath id="clip-4">
+                        <circle
+                          cx={0}
+                          cy={0}
+                          fill="#000"
+                          r="150px"
+                          className={styles.circle}
+                        ></circle>
+                      </clipPath>
+                    </defs>
 
-                <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
-                  darts2bot
-                </text>
+                    <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
+                      darts2bot
+                    </text>
+                  </>
+                )}
 
                 <g clipPath="url(#clip-4)">
                   <image
-                    className={styles.image}
+                    className={cn({
+                      [styles.mobile_image]: isTouch,
+                      [styles.image]: !isTouch,
+                    })}
                     height="100%"
                     preserveAspectRatio="xMidYMid"
                     width="100%"
@@ -327,25 +371,32 @@ const Projects = () => {
                 viewBox="0 0 300 200"
                 className={styles.svg}
               >
-                <defs>
-                  <clipPath id="clip-5">
-                    <circle
-                      cx={0}
-                      cy={0}
-                      fill="#000"
-                      r="150px"
-                      className={styles.circle}
-                    ></circle>
-                  </clipPath>
-                </defs>
+                {!isTouch && (
+                  <>
+                    <defs>
+                      <clipPath id="clip-5">
+                        <circle
+                          cx={0}
+                          cy={0}
+                          fill="#000"
+                          r="150px"
+                          className={styles.circle}
+                        ></circle>
+                      </clipPath>
+                    </defs>
 
-                <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
-                  WeatherMaps
-                </text>
+                    <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
+                      WeatherMaps
+                    </text>
+                  </>
+                )}
 
                 <g clipPath="url(#clip-5)">
                   <image
-                    className={styles.image}
+                    className={cn({
+                      [styles.mobile_image]: isTouch,
+                      [styles.image]: !isTouch,
+                    })}
                     height="100%"
                     preserveAspectRatio="xMinYMid"
                     width="100%"
