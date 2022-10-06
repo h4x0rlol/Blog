@@ -2,7 +2,7 @@
 
 ### Have you ever wondered the state of the air in your apartment? Why is it too hot/cold, humid or dry? This article will help you know the state of the air by providing a simple solution using Raspberry Pi, React, and Nodejs.
 
-### [![Dashboard Preview](https://i.imgur.com/xAR68OK.png "Dashboard Preview")](https://i.imgur.com/xAR68OK.png "Dashboard Preview")
+### [![Dashboard Preview](/img/articles/react-raspberry-dashboard/dashboard.jpg "Dashboard Preview")](/img/articles/react-raspberry-dashboard/dashboard.jpg "Dashboard Preview")
 
 ## Hardware requirements:
 
@@ -14,13 +14,13 @@
 
 ## Connections:
 
-[![Connection Diagram](https://i.imgur.com/OKq790x.png "Connection Diagram")](https://i.imgur.com/OKq790x.png "Connection Diagram")
+[![Connection Diagram](/img/articles/react-raspberry-dashboard/connections.jpg "Connection Diagram")](/img/articles/react-raspberry-dashboard/connections.jpg "Connection Diagram")
 
 ## Setup
 
 - ### Create raspbian bootale usb with [Pi Imager](https://www.raspberrypi.com/software/ "Pi Imager"), press ctrl+shift+x to open advanced options, setup wifi and ssh
 
-  [![Wifi settings](https://i.imgur.com/AW5pxmc.png "Wifi settings")](https://i.imgur.com/2zKzxVD.png "Wifi settings")
+  [![Wifi settings](/img/articles/react-raspberry-dashboard/wifi.jpg "Wifi settings")](/img/articles/react-raspberry-dashboard/wifi.jpg "Wifi settings")
 
 - ### Reserve the IP-address of Pi in the DHCP table of your router (mine is 192.168.0.102)
 - ### Connect to your Pi via ssh `ssh pi@192.168.0.102`
@@ -30,7 +30,7 @@
 - ### `sudo apt-get update`
 - ### `sudo apt-get upgrade`
 - ### `sudo apt install build-essential python-dev git`
-- ### `git clone Adafruit_Python_DHT library`
+- ### [ git clone Adafruit_Python_DHT library ](https://github.com/adafruit/Adafruit_Python_DHT "git clone Adafruit_Python_DHT library")
 - ### `cd Adafruit_Python_DHT`
 - ### `sudo python setup.py install`
 
@@ -38,7 +38,7 @@
 
 - ### `cd /home/pi/Adafruit_Python_DHT/examples`
 - ### then `./AdafruitDHT.py 22 4` you should see output like this `Temp=25.1* Humidity=25.4%`
-- ### [ Install Nodejs and yarn](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04 " Install Nodejs and yarn")
+- ### [ Install Nodejs and yarn](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04 "Install Nodejs and yarn")
 - ### Install serve package globally to serve our frontend `sudo yarn global add serve`
 
 ## Start the app

@@ -23,7 +23,7 @@ class MyDocument extends Document {
         <Head>
           <link rel="icon" href="/favicons/favicon.ico" sizes="any" />
           <link rel="icon" href="/favicons/favicon.svg" type="image/svg+xml" />
-          <meta charset="utf-8" />
+          <meta charSet="utf-8" />
           <meta
             name="description"
             content="Dmitriy Khailov personal portofilo website and blog"
