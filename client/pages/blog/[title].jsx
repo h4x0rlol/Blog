@@ -1,8 +1,40 @@
-import { getArticleData, getArticlesFiles } from "../../lib/utils";
+import Head from "next/head";
+import { useRouter } from "next/router";
 import ArticleContent from "../../components/ArticleContent";
+import CommentSection from "../../components/CommentSection";
+import { Articles } from "../../lib/Articles";
+import { getArticleData, getArticlesFiles } from "../../lib/utils";
 
 const Article = ({ article }) => {
-  return <ArticleContent article={article} />;
+  const { asPath } = useRouter();
+
+  const extractPageTitle = (title) => {
+    return Articles.filter((article) => article.link === title)[0].title;
+  };
+
+  const extractPageKeywords = (title) => {
+    return Articles.filter(
+      (article) => article.link === title
+    )[0].tags.toString();
+  };
+
+  return (
+    <>
+      <Head>
+        <meta keywords={extractPageKeywords(article.title)}></meta>
+        <title>{extractPageTitle(article.title)}</title>
+      </Head>
+      <main>
+        <ArticleContent article={article} />
+        <CommentSection
+          shortname={"h4x0rlol"}
+          url={`https://h4x0rlol.me${asPath}`}
+          id={article.id}
+          title={article.title}
+        />
+      </main>
+    </>
+  );
 };
 
 export const getStaticProps = async (context) => {

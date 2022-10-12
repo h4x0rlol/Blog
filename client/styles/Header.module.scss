@@ -37,15 +37,17 @@
 
 .header_spoiler {
   display: flex;
-  height: 1.5rem;
-  width: 13rem;
-  margin-top: 1rem;
+  flex-direction: row;
+}
+
+.header_spoiler_tag {
   color: var(--color-bg-primary);
   background-color: var(--color-bg-primary);
   transition: all 100ms linear;
+  margin-left: 5px;
 }
 
-.header_spoiler:hover {
+.header_spoiler_tag:hover {
   color: var(--color-text-primary);
   background-color: var(--color-bg-primary);
   transition: all 100ms linear;
@@ -94,6 +96,7 @@
 }
 
 .hr {
+  height: 0;
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
@@ -121,6 +124,14 @@
 
   .header_contacts_ul {
     padding-inline-start: 0;
+  }
+
+  .header_spoiler {
+    flex-direction: column;
+  }
+
+  .header_spoiler_tag {
+    margin-left: 0;
   }
 }
 

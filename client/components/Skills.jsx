@@ -7,26 +7,43 @@ const Skills = () => {
         <h3 className={styles.section_header}>Education</h3>
         <ul className={styles.section_ul}>
           <li className={styles.section_li}>
-            <div className={styles.degree}>Bachelor in Computer Science</div>
+            <div className={styles.degree}>Master in Computer Science</div>
             <div className={styles.university}>
               Omsk State Transport University
             </div>
-            <div className={styles.education_years}>2018 - 2022</div>
+            <div className={styles.education_years}>2018 - 2024</div>
+          </li>
+        </ul>
+      </section>
+      <section className={styles.education_section}>
+        <h3 className={styles.section_header}>Work experience</h3>
+        <ul className={styles.section_ul}>
+          <li className={styles.section_li}>
+            <div className={styles.degree}>BeetSoft</div>
+            <div className={styles.degree}>Frontend developer</div>
+            <div className={styles.university}>
+              Development of cross-platform mobile applications using React
+              Native.
+              <br />
+              SPA development on React.
+            </div>
+            <div className={styles.education_years}>
+              2021 (July) - 2021 (December)
+            </div>
           </li>
         </ul>
       </section>
       <section className={styles.skills}>
-        <h3 className={styles.section_header}>Skills</h3>
+        <h3 className={styles.section_header}>Stack</h3>
         <div className={styles.section_item}>
           <ul className={styles.section_ul}>
-            <li className={styles.section_li}>React</li>
-            <li className={styles.section_li}>Redux</li>
+            <li className={styles.section_li}>Javascript, Typescript</li>
+            <li className={styles.section_li}>React, React Native</li>
+            <li className={styles.section_li}>Redux, Mobx</li>
             <li className={styles.section_li}>Next.js</li>
-            <li className={styles.section_li}>Typescript</li>
-            <li className={styles.section_li}>Express</li>
-            <li className={styles.section_li}>SQL</li>
-            <li className={styles.section_li}>Telegraf.js</li>
-            <li className={styles.section_li}>WebRTC</li>
+            <li className={styles.section_li}>
+              Websockets, REST, GraphQL, WebRTC
+            </li>
             <li className={styles.section_li}>Linux</li>
           </ul>
         </div>

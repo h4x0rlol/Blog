@@ -1,20 +1,62 @@
+import cn from "classnames";
+import { motion } from "framer-motion";
+import Link from "next/link";
 import React from "react";
+import { useInView } from "react-intersection-observer";
 import styles from "../styles/Projects.module.scss";
 import Skills from "./Skills";
-import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
 
 const Projects = () => {
   const [items, setItems] = React.useState([]);
+  const [isTouch, setIsTouch] = React.useState(false);
   const [divref, divinView] = useInView({
-    triggerOnce: true,
-    rootMargin: "-60px 0px",
+    // triggerOnce: true,
+    rootMargin: "-50px 0px",
   });
 
   React.useEffect(() => {
-    if (document.querySelector("svg") && document.querySelectorAll("#item")) {
+    const isTouchDevice =
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0 ||
+      navigator.msMaxTouchPoints > 0;
+
+    setIsTouch(isTouchDevice);
+
+    if (
+      document.querySelector("svg") &&
+      document.querySelectorAll("#item") &&
+      !isTouchDevice
+    ) {
       const point = document.querySelector("svg").createSVGPoint();
       const litems = document.querySelectorAll("#item");
+
+      class Item {
+        constructor(config) {
+          Object.keys(config).forEach((item) => {
+            this[item] = config[item];
+          }, this);
+
+          this.el.addEventListener(
+            "mousemove",
+            this.mouseMoveHandler.bind(this)
+          );
+        }
+
+        update(c) {
+          this.clip.setAttribute("cx", c.x);
+          this.clip.setAttribute("cy", c.y);
+        }
+
+        getCoordinates(e, svg) {
+          point.x = e.clientX;
+          point.y = e.clientY;
+          return point.matrixTransform(svg.getScreenCTM().inverse());
+        }
+
+        mouseMoveHandler(e) {
+          this.update(this.getCoordinates(e, this.svg));
+        }
+      }
 
       litems.forEach((item, index) => {
         setItems((prev) => [
@@ -26,35 +68,6 @@ const Projects = () => {
           }),
         ]);
       });
-
-      const getCoordinates = (e, svg) => {
-        point.x = e.clientX;
-        point.y = e.clientY;
-        return point.matrixTransform(svg.getScreenCTM().inverse());
-      };
-
-      Item.prototype = {
-        update: function update(c) {
-          this.clip.setAttribute("cx", c.x);
-          this.clip.setAttribute("cy", c.y);
-        },
-        mouseMoveHandler: function mouseMoveHandler(e) {
-          this.update(getCoordinates(e, this.svg));
-        },
-        touchMoveHandler: function touchMoveHandler(e) {
-          e.preventDefault();
-          var touch = e.targetTouches[0];
-          if (touch) return this.update(getCoordinates(touch, this.svg));
-        },
-      };
-
-      function Item(config) {
-        Object.keys(config).forEach(function (item) {
-          this[item] = config[item];
-        }, this);
-        this.el.addEventListener("mousemove", this.mouseMoveHandler.bind(this));
-        this.el.addEventListener("touchmove", this.touchMoveHandler.bind(this));
-      }
     }
   }, []);
 
@@ -62,11 +75,13 @@ const Projects = () => {
     <>
       <div className={styles.container}>
         <div className={styles.items}>
+          <h3 className={styles.header}>Open Source</h3>
+
           <article className={styles.project}>
             <a
               className={styles.item}
               id="item"
-              href="https://github.com/h4x0rlol/timesheet"
+              href="https://github.com/h4x0rlol/dra.ws"
               target="_blank"
               rel="noreferrer"
             >
@@ -75,38 +90,110 @@ const Projects = () => {
                 viewBox="0 0 300 200"
                 className={styles.svg}
               >
-                <defs>
-                  <clipPath id="clip-0">
-                    <circle
-                      cx={0}
-                      cy={0}
-                      fill="#000"
-                      r="150px"
-                      className={styles.circle}
-                    ></circle>
-                  </clipPath>
-                </defs>
-
-                <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
-                  Timesheet
-                </text>
+                {!isTouch && (
+                  <>
+                    <defs>
+                      <clipPath id="clip-0">
+                        <circle
+                          cx={0}
+                          cy={0}
+                          fill="#000"
+                          r="150px"
+                          className={styles.circle}
+                        ></circle>
+                      </clipPath>
+                    </defs>
+                    <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
+                      DRA.WS
+                    </text>
+                  </>
+                )}
 
                 <g clipPath="url(#clip-0)">
                   <image
-                    className={styles.image}
+                    className={cn({
+                      [styles.mobile_image]: isTouch,
+                      [styles.image]: !isTouch,
+                    })}
                     height="100%"
                     preserveAspectRatio="xMidYMid"
                     width="100%"
-                    href="/img/timesheet.png"
+                    href="/img/draws.gif"
                   ></image>
                 </g>
               </svg>
             </a>
 
             <div className={styles.project_description}>
-              The Time Analyzer, was made for yourself&apos;s needs and always
-              under development. Frontend on React, Typescript, Redux, backend
-              on Express, PostgreSQL.
+              Draw together in real time on canvas (without libraries) through
+              WebSockets
+            </div>
+          </article>
+
+          <article className={styles.project}>
+            <a
+              className={styles.item}
+              id="item"
+              href="https://github.com/h4x0rlol/react-raspberry-dashboard"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <svg
+                preserveAspectRatio="xMidYMid slice"
+                viewBox="0 0 300 200"
+                className={styles.svg}
+              >
+                {!isTouch && (
+                  <>
+                    <defs>
+                      <clipPath id="clip-1">
+                        <circle
+                          cx={0}
+                          cy={0}
+                          fill="#000"
+                          r="150px"
+                          className={styles.circle}
+                        ></circle>
+                      </clipPath>
+                    </defs>
+
+                    <text className={styles.svg_text} dy=".3em" x="50%" y="35%">
+                      React
+                    </text>
+                    <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
+                      Raspberry
+                    </text>
+
+                    <text className={styles.svg_text} dy=".3em" x="50%" y="65%">
+                      Dashboard
+                    </text>
+                  </>
+                )}
+
+                <g clipPath="url(#clip-1)">
+                  <image
+                    className={cn({
+                      [styles.mobile_image]: isTouch,
+                      [styles.image]: !isTouch,
+                    })}
+                    height="100%"
+                    preserveAspectRatio="xMidYMid"
+                    width="100%"
+                    href="/img/react-raspberry-dashboard.jpg"
+                  ></image>
+                </g>
+              </svg>
+            </a>
+
+            <div className={styles.project_description}>
+              <p>
+                Simple dashboard to monitor room air quality, weather,
+                cryptocurrencies and... whatever you want (just add some API`s).{" "}
+                Detailed guide how to make it{" "}
+                <Link href="/blog/react-raspberry-dashboard">
+                  <a className={styles.link}>here.</a>
+                </Link>
+              </p>
             </div>
           </article>
 
@@ -123,25 +210,32 @@ const Projects = () => {
                 viewBox="0 0 300 200"
                 className={styles.svg}
               >
-                <defs>
-                  <clipPath id="clip-1">
-                    <circle
-                      cx={0}
-                      cy={0}
-                      fill="#000"
-                      r="150px"
-                      className={styles.circle}
-                    ></circle>
-                  </clipPath>
-                </defs>
+                {!isTouch && (
+                  <>
+                    <defs>
+                      <clipPath id="clip-2">
+                        <circle
+                          cx={0}
+                          cy={0}
+                          fill="#000"
+                          r="150px"
+                          className={styles.circle}
+                        ></circle>
+                      </clipPath>
+                    </defs>
 
-                <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
-                  Happy Hearts
-                </text>
+                    <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
+                      Happy Hearts
+                    </text>
+                  </>
+                )}
 
-                <g clipPath="url(#clip-1)">
+                <g clipPath="url(#clip-2)">
                   <image
-                    className={styles.image}
+                    className={cn({
+                      [styles.mobile_image]: isTouch,
+                      [styles.image]: !isTouch,
+                    })}
                     height="100%"
                     preserveAspectRatio="xMidYMid"
                     width="100%"
@@ -171,29 +265,36 @@ const Projects = () => {
                 viewBox="0 0 300 200"
                 className={styles.svg}
               >
-                <defs>
-                  <clipPath id="clip-2">
-                    <circle
-                      cx={0}
-                      cy={0}
-                      fill="#000"
-                      r="150px"
-                      className={styles.circle}
-                    ></circle>
-                  </clipPath>
-                </defs>
+                {!isTouch && (
+                  <>
+                    <defs>
+                      <clipPath id="clip-3">
+                        <circle
+                          cx={0}
+                          cy={0}
+                          fill="#000"
+                          r="150px"
+                          className={styles.circle}
+                        ></circle>
+                      </clipPath>
+                    </defs>
 
-                <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
-                  Gnility
-                </text>
+                    <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
+                      Gnility
+                    </text>
+                  </>
+                )}
 
-                <g clipPath="url(#clip-2)">
+                <g clipPath="url(#clip-3)">
                   <image
-                    className={styles.image}
+                    className={cn({
+                      [styles.mobile_image]: isTouch,
+                      [styles.image]: !isTouch,
+                    })}
                     height="100%"
                     preserveAspectRatio="xMidYMid"
                     width="100%"
-                    href="/img/gnility.jpg"
+                    href="/img/gnility.png"
                   ></image>
                 </g>
               </svg>
@@ -218,29 +319,36 @@ const Projects = () => {
                 viewBox="0 0 300 200"
                 className={styles.svg}
               >
-                <defs>
-                  <clipPath id="clip-3">
-                    <circle
-                      cx={0}
-                      cy={0}
-                      fill="#000"
-                      r="150px"
-                      className={styles.circle}
-                    ></circle>
-                  </clipPath>
-                </defs>
+                {!isTouch && (
+                  <>
+                    <defs>
+                      <clipPath id="clip-4">
+                        <circle
+                          cx={0}
+                          cy={0}
+                          fill="#000"
+                          r="150px"
+                          className={styles.circle}
+                        ></circle>
+                      </clipPath>
+                    </defs>
 
-                <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
-                  darts2bot
-                </text>
+                    <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
+                      darts2bot
+                    </text>
+                  </>
+                )}
 
-                <g clipPath="url(#clip-3)">
+                <g clipPath="url(#clip-4)">
                   <image
-                    className={styles.image}
+                    className={cn({
+                      [styles.mobile_image]: isTouch,
+                      [styles.image]: !isTouch,
+                    })}
                     height="100%"
                     preserveAspectRatio="xMidYMid"
                     width="100%"
-                    href="/img/darts2bot.jpg"
+                    href="/img/darts2bot.png"
                   ></image>
                 </g>
               </svg>
@@ -265,25 +373,32 @@ const Projects = () => {
                 viewBox="0 0 300 200"
                 className={styles.svg}
               >
-                <defs>
-                  <clipPath id="clip-4">
-                    <circle
-                      cx={0}
-                      cy={0}
-                      fill="#000"
-                      r="150px"
-                      className={styles.circle}
-                    ></circle>
-                  </clipPath>
-                </defs>
+                {!isTouch && (
+                  <>
+                    <defs>
+                      <clipPath id="clip-5">
+                        <circle
+                          cx={0}
+                          cy={0}
+                          fill="#000"
+                          r="150px"
+                          className={styles.circle}
+                        ></circle>
+                      </clipPath>
+                    </defs>
 
-                <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
-                  WeatherMaps
-                </text>
+                    <text className={styles.svg_text} dy=".3em" x="50%" y="50%">
+                      WeatherMaps
+                    </text>
+                  </>
+                )}
 
-                <g clipPath="url(#clip-4)">
+                <g clipPath="url(#clip-5)">
                   <image
-                    className={styles.image}
+                    className={cn({
+                      [styles.mobile_image]: isTouch,
+                      [styles.image]: !isTouch,
+                    })}
                     height="100%"
                     preserveAspectRatio="xMinYMid"
                     width="100%"
@@ -309,9 +424,6 @@ const Projects = () => {
         transition={{ duration: 0.8 }}
       >
         <hr className={styles.hr} />
-        <div className={styles.footer_text}>
-          Wow! You scrolled the whole page!
-        </div>
       </motion.footer>
     </>
   );
