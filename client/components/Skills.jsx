@@ -28,7 +28,7 @@ const Skills = () => {
               SPA development on React.
             </div>
             <div className={styles.education_years}>
-              2021 (August) - 2021 (December)
+              2021 (July) - 2021 (December)
             </div>
           </li>
         </ul>
