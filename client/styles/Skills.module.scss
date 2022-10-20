@@ -60,7 +60,7 @@
 
 .education_years {
   font-weight: 300;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
 }
 
 .skills {
@@ -75,6 +75,12 @@
 
 .muted {
   font-weight: 300;
+}
+
+.work_ul {
+  margin: 0;
+  list-style: disc;
+  padding: 1em 1em 0 1em;
 }
 
 @media (max-width: 480px) {

@@ -15,24 +15,50 @@ const Skills = () => {
           </li>
         </ul>
       </section>
+
       <section className={styles.education_section}>
         <h3 className={styles.section_header}>Work experience</h3>
+
         <ul className={styles.section_ul}>
           <li className={styles.section_li}>
             <div className={styles.degree}>BeetSoft</div>
             <div className={styles.degree}>Frontend developer</div>
-            <div className={styles.university}>
-              Development of cross-platform mobile applications using React
-              Native.
-              <br />
-              SPA development on React.
-            </div>
             <div className={styles.education_years}>
               2021 (July) - 2021 (December)
+            </div>
+            <div className={styles.university}>
+              <ul className={styles.work_ul}>
+                <li>
+                  Development of cross-platform mobile applications using React
+                  Native
+                </li>
+                <li>SPA development on React</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <ul className={styles.section_ul}>
+          <li className={styles.section_li}>
+            <div className={styles.degree}>NetSyde</div>
+            <div className={styles.degree}>Frontend developer</div>
+            <div className={styles.education_years}>
+              2019 (October) - 2020 (June)
+            </div>
+            <div className={styles.university}>
+              Part-time employment
+              <ul className={styles.work_ul}>
+                <li>
+                  Development and support of decentralized applications (dApp)
+                </li>
+                <li>Development of Telegram bots</li>
+                <li>Third-party orders</li>
+              </ul>
             </div>
           </li>
         </ul>
       </section>
+
       <section className={styles.skills}>
         <h3 className={styles.section_header}>Stack</h3>
         <div className={styles.section_item}>
