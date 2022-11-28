@@ -38,7 +38,7 @@ const ArticleContent = ({ article }) => {
   return (
     <>
       <ReadProgress width={scrollPercent} />
-      <article className={styles.container}>
+      <article className={styles.container} ref={ref}>
         <MDXRemote {...article.content} components={components} />
       </article>
     </>
