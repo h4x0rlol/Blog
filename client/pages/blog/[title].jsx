@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { Articles } from "../../articles/Articles";
 import ArticleContent from "../../components/ArticleContent";
 import CommentSection from "../../components/CommentSection";
-import { Articles } from "../../lib/Articles";
 import { getArticleData, getArticlesFiles } from "../../lib/utils";
 
 const Article = ({ article }) => {
@@ -49,10 +49,11 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const articleFilenames = getArticlesFiles();
+  const articleFilenames = await getArticlesFiles();
   const titles = articleFilenames.map((fileName) =>
-    fileName.replace(/\.md$/, "")
+    fileName.replace(/\.mdx/, "")
   );
+
   return {
     paths: titles.map((title) => ({ params: { title: title } })),
     fallback: false,
