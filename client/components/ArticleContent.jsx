@@ -1,7 +1,11 @@
 import { throttle } from "lodash";
+import { MDXRemote } from "next-mdx-remote";
+import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import styles from "../styles/Article.module.scss";
 import ReadProgress from "./ReadProgress";
+
+const components = { Image };
 
 const ArticleContent = ({ article }) => {
   const [scrollPercent, setScrollPercent] = useState(0);
@@ -34,11 +38,9 @@ const ArticleContent = ({ article }) => {
   return (
     <>
       <ReadProgress width={scrollPercent} />
-      <article
-        ref={ref}
-        className={styles.container}
-        dangerouslySetInnerHTML={{ __html: article.content }}
-      />
+      <article className={styles.container} ref={ref}>
+        <MDXRemote {...article.content} components={components} />
+      </article>
     </>
   );
 };

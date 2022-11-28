@@ -1,7 +1,7 @@
-import styles from "../../styles/Blog.module.scss";
 import Head from "next/head";
 import Link from "next/link";
-import { Articles } from "../../lib/Articles";
+import { Articles } from "../../articles/Articles";
+import styles from "../../styles/Blog.module.scss";
 
 const Blog = () => {
   return (

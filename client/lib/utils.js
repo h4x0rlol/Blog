@@ -1,32 +1,25 @@
-import fs from "fs";
+import fs from "fs/promises";
+import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
-import matter from "gray-matter";
-import remark from "remark";
-import html from "remark-html";
 
 const articlesDirectory = path.join(process.cwd(), "articles");
 
-export function getArticlesFiles() {
-  return fs.readdirSync(articlesDirectory);
-}
+export async function getArticlesFiles() {
+  const files = await fs.readdir(articlesDirectory);
 
-async function markdownToHtml(markdown) {
-  const result = await remark().use(html).process(markdown);
-  return result.toString();
+  return files.filter((file) => path.extname(file) === ".mdx");
 }
 
 export async function getArticleData(filename) {
-  const articleTitle = filename.replace(/\.md/, "");
-  const filePath = path.join(articlesDirectory, `${articleTitle}.md`);
-  const fileContent = fs.readFileSync(filePath, "utf-8");
+  const articleTitle = filename.replace(/\.mdx/, "");
+  const filePath = path.join(articlesDirectory, `${articleTitle}.mdx`);
+  const fileContent = await fs.readFile(filePath, "utf-8");
 
-  const { content } = matter(fileContent);
-
-  const contentToHtml = await markdownToHtml(content || "");
+  const content = await serialize(fileContent);
 
   const articleData = {
     title: articleTitle,
-    content: contentToHtml,
+    content: content,
   };
 
   return articleData;
