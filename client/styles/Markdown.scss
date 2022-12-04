@@ -3,7 +3,19 @@ a {
   color: var(--color-text-secondary);
 }
 
-h1,
+p {
+  line-height: 1.4em;
+  font-weight: 300;
+  margin: 1.4em 0;
+  font-size: 17px;
+}
+
+h1 {
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+}
+
 h2,
 h3,
 h4,
@@ -16,7 +28,12 @@ code {
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
     Liberation Mono, monospace;
   font-size: 85%;
-  background: var(--color-border-secondary);
+  display: block;
+  overflow-x: auto;
+  overflow-wrap: break-word;
+  background: var(--color-code-bg);
+  color: var(--color-code);
+  padding: 0.5em;
 }
 
 hr {
@@ -24,4 +41,11 @@ hr {
   margin: 24px 0;
   border: 0;
   border-top: 1px solid var(--color-border-primary);
+}
+
+li {
+  line-height: 1.4em;
+  font-weight: 300;
+  margin: 1.1em 0;
+  font-size: 17px;
 }
