@@ -186,7 +186,7 @@ const Projects = () => {
             </a>
 
             <div className={styles.project_description}>
-              <p>
+              <p className="unset_p">
                 Simple dashboard to monitor room air quality, weather,
                 cryptocurrencies and... whatever you want (just add some API`s).{" "}
                 Detailed guide how to make it{" "}

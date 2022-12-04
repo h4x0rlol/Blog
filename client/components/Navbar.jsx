@@ -1,9 +1,10 @@
+import { faArrowRight, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import cn from "classnames";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import styles from "../styles/Navbar.module.scss";
-import Link from "next/link";
-import { faSun, faArrowRight, faMoon } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useRouter } from "next/router";
 
 const Navbar = ({ children }) => {
   const router = useRouter();
@@ -30,7 +31,7 @@ const Navbar = ({ children }) => {
       <>
         <header className={styles.navbar}>
           <div className={styles.navbar_container}>
-            <h1 className={styles.navbar_name}>h4x0rlol</h1>
+            <h1 className={cn([styles.navbar_name, "unset_h1"])}>h4x0rlol</h1>
             <nav className={styles.navbar_buttons}>
               <Link href="/blog">
                 <a
