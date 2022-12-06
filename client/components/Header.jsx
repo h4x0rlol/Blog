@@ -8,7 +8,7 @@ const Header = () => {
           <h2 className={styles.header_name_text}>Dmitriy Khailov</h2>
           <div className={styles.header_name_specialization}>
             <div className={styles.header_spoiler}>
-              <p className={"unset_p"}>Frontend Javascript Developer</p>
+              <p>Frontend Javascript Developer</p>
               <p className={styles.header_spoiler_tag}>
                 at least would like to be
               </p>

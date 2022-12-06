@@ -1,4 +1,3 @@
-import cn from "classnames";
 import Head from "next/head";
 import Link from "next/link";
 import { Articles } from "../../articles/Articles";
@@ -20,7 +19,7 @@ const Blog = () => {
                 <div className={styles.wrapper}>
                   <div>
                     <header className={styles.article_header}>
-                      <h1 className={cn([styles.name, "unset_h1"])}>
+                      <h1 className={styles.name}>
                         <Link href={`/blog/${article.link}`}>
                           <a className={styles.article_title}>
                             {article.title}

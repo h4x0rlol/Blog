@@ -44,10 +44,6 @@
   color: var(--color-bg-primary);
   background-color: var(--color-bg-primary);
   transition: all 100ms linear;
-  margin: unset;
-  line-height: unset;
-  font-weight: unset;
-  font-size: unset;
   margin-left: 5px;
 }
 
@@ -77,13 +73,9 @@
 }
 
 .header_contacts_li {
-  margin: unset;
   margin-bottom: 0.5rem;
   display: flex;
   text-align: -webkit-match-parent;
-  line-height: unset;
-  font-weight: unset;
-  font-size: unset;
 }
 
 .header_link {

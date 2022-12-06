@@ -28,11 +28,11 @@ const Skills = () => {
             </div>
             <div className={styles.university}>
               <ul className={styles.work_ul}>
-                <li className="unset_li">
+                <li>
                   Development of cross-platform mobile applications using React
                   Native
                 </li>
-                <li className="unset_li">SPA development on React</li>
+                <li>SPA development on React</li>
               </ul>
             </div>
           </li>
@@ -48,11 +48,11 @@ const Skills = () => {
             <div className={styles.university}>
               Part-time employment
               <ul className={styles.work_ul}>
-                <li className="unset_li">
+                <li>
                   Development and support of decentralized applications (dApp)
                 </li>
-                <li className="unset_li">Development of Telegram bots</li>
-                <li className="unset_li">Third-party orders</li>
+                <li>Development of Telegram bots</li>
+                <li>Third-party orders</li>
               </ul>
             </div>
           </li>

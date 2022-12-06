@@ -2,7 +2,7 @@ export const Articles = [
   {
     id: 1,
     title: "Watch some metrics using Raspberry and React",
-    author: "Dmitriy Khailov",
+    author: "h4x0rlol",
     link: "react-raspberry-dashboard",
     tags: [
       "Raspberry Pi",
@@ -17,7 +17,7 @@ export const Articles = [
   {
     id: 2,
     title: "Setting up Ryzen CPUs on Arch Linux (and others)",
-    author: "Dmitriy Khailov",
+    author: "h4x0rlol",
     link: "archlinux-ryzen-setup",
     tags: ["Linux", "Arch", "Ryzen", "Voltage", "Noise", "Sensors"],
     date: "August 22, 2021",

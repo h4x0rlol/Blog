@@ -1,4 +1,3 @@
-import cn from "classnames";
 import Head from "next/head";
 import styles from "../styles/404.module.scss";
 
@@ -11,7 +10,7 @@ const Custom404 = () => {
       </Head>
 
       <main className={styles.error}>
-        <h1 className={cn([styles.h1, "unset_h1"])}>404</h1>
+        <h1 className={styles.h1}>404</h1>
         <div className={styles.text}>
           <h2 className={styles.h2}>This page could not be found.</h2>
         </div>
