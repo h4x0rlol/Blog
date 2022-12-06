@@ -1,30 +1,27 @@
-a {
+.md_a {
   text-decoration: none;
   color: var(--color-text-secondary);
 }
 
-p {
+.md_p {
   line-height: 1.4em;
   font-weight: 300;
   margin: 1.4em 0;
   font-size: 17px;
 }
 
-h1 {
+.md_h1 {
   font-weight: 600;
   line-height: 1.4;
   text-align: center;
 }
 
-h2,
-h3,
-h4,
-h5 {
+.md_heading {
   font-weight: 300;
   line-height: 1.5;
 }
 
-code {
+.md_code {
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
     Liberation Mono, monospace;
   font-size: 85%;
@@ -36,14 +33,14 @@ code {
   padding: 0.5em;
 }
 
-hr {
+.md_hr {
   padding: 0;
   margin: 24px 0;
   border: 0;
   border-top: 1px solid var(--color-border-primary);
 }
 
-li {
+.md_li {
   line-height: 1.4em;
   font-weight: 300;
   margin: 1.1em 0;
