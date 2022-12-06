@@ -3,7 +3,7 @@ import styles from "../../styles/Markdown.module.scss";
 
 export const MDLink = (props) => {
   return (
-    <a {...props} className={styles.md_a}>
+    <a {...props} target="_blank" className={styles.md_a}>
       {props.children}
     </a>
   );
