@@ -125,8 +125,11 @@ const Projects = () => {
             </a>
 
             <div className={styles.project_description}>
-              Draw together in real time on canvas (without libraries) through
-              WebSockets
+              An open source service for deployment on a local network that
+              allows users to interact in a real-time session with a virtual
+              drawing canvas, also with real-time chat support to increase the
+              productivity of work meetings, thereby reducing their time and
+              increasing productivity labor.
             </div>
           </article>
 
@@ -187,11 +190,10 @@ const Projects = () => {
 
             <div className={styles.project_description}>
               <p>
-                Simple dashboard to monitor room air quality, weather,
-                cryptocurrencies and... whatever you want (just add some API`s).{" "}
-                Detailed guide how to make it{" "}
+                Dashboard for monitoring indoor air parameters using Raspberry
+                Pi, as well as displaying data from various public APIs.{" "}
                 <Link href="/blog/react-raspberry-dashboard">
-                  <a className={styles.link}>here.</a>
+                  <a className={styles.link}>(How to make it)</a>
                 </Link>
               </p>
             </div>
@@ -247,8 +249,7 @@ const Projects = () => {
 
             <div className={styles.project_description}>
               Website for buying English courses for young children, payment
-              using Yandex Kassa (frontend on React, backend on Express, React
-              Admin, and MySQL for database).
+              using Yandex Kassa.
             </div>
           </article>
 
@@ -301,8 +302,7 @@ const Projects = () => {
             </a>
 
             <div className={styles.project_description}>
-              Simple WebRTC peer to peer chat on random topics (React, Peerjs,
-              Typescript)
+              A simple peer-to-peer chat based on WebRTC on random topics.
             </div>
           </article>
 
@@ -355,8 +355,7 @@ const Projects = () => {
             </a>
 
             <div className={styles.project_description}>
-              Telegram darts-game bot using Telegraf.js, Typescript, Nodejs,
-              Mysql.
+              Multiplayer darts game in the form of a telegram bot.
             </div>
           </article>
 
@@ -409,8 +408,8 @@ const Projects = () => {
             </a>
 
             <div className={styles.project_description}>
-              React single page Weather Application using OpenWeatherMap API and
-              leaflet maps, Chartjs for graphs and Booststrap for styles.
+              Application for tracking weather conditions anywhere in the world
+              using interactive maps.
             </div>
           </article>
         </div>

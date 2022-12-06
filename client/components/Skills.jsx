@@ -43,7 +43,7 @@ const Skills = () => {
             <div className={styles.degree}>NetSyde</div>
             <div className={styles.degree}>Frontend developer</div>
             <div className={styles.education_years}>
-              2019 (October) - 2020 (June)
+              2019 (October) - 2021 (June)
             </div>
             <div className={styles.university}>
               Part-time employment
