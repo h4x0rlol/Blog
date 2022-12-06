@@ -64,13 +64,18 @@ const Skills = () => {
         <div className={styles.section_item}>
           <ul className={styles.section_ul}>
             <li className={styles.section_li}>Javascript, Typescript</li>
-            <li className={styles.section_li}>React, React Native</li>
-            <li className={styles.section_li}>Redux, Mobx</li>
-            <li className={styles.section_li}>Next.js</li>
+            <li className={styles.section_li}>React, React Native, Next.js</li>
+            <li className={styles.section_li}>
+              Redux (Toolkit, RTK Query), Mobx (State-Tree), Apollo
+            </li>
             <li className={styles.section_li}>
               Websockets, REST, GraphQL, WebRTC
             </li>
-            <li className={styles.section_li}>Linux</li>
+            <li className={styles.section_li}>
+              SCSS / CSS Modules / styled-components / material-ui / tailwind
+            </li>
+            <li className={styles.section_li}>Jest</li>
+            <li className={styles.section_li}>Linux, Bash</li>
           </ul>
         </div>
       </section>
