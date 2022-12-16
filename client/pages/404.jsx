@@ -1,5 +1,5 @@
-import styles from "../styles/404.module.scss";
 import Head from "next/head";
+import styles from "../styles/404.module.scss";
 
 const Custom404 = () => {
   return (

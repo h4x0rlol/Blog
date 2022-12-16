@@ -3,9 +3,23 @@ import { MDXRemote } from "next-mdx-remote";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import styles from "../styles/Article.module.scss";
+import * as Typography from "./Markdown/Typography";
 import ReadProgress from "./ReadProgress";
 
-const components = { Image };
+const components = {
+  Image,
+  h1: Typography.MDH1,
+  h2: Typography.MDHeading,
+  h3: Typography.MDHeading,
+  h4: Typography.MDHeading,
+  h5: Typography.MDHeading,
+  h6: Typography.MDHeading,
+  p: Typography.MDP,
+  a: Typography.MDLink,
+  hr: Typography.MDHr,
+  li: Typography.MDLi,
+  code: Typography.MDCode,
+};
 
 const ArticleContent = ({ article }) => {
   const [scrollPercent, setScrollPercent] = useState(0);

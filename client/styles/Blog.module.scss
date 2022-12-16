@@ -43,6 +43,7 @@
   font-weight: 700;
   line-height: 1em;
   font-size: 1.2em;
+  font-style: italic;
   color: var(--color-text-primary);
   transition: all 100ms linear;
 }
@@ -50,6 +51,7 @@
 .article_date {
   white-space: nowrap;
   font-size: 0.9rem;
+  font-style: italic;
   transition: all 100ms linear;
 }
 
@@ -61,6 +63,7 @@
   font-size: 0.85em;
   padding: 0em 0;
   line-height: 1.4em;
+  font-style: italic;
   margin: 0;
 }
 

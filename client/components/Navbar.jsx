@@ -1,9 +1,9 @@
+import { faArrowRight, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import styles from "../styles/Navbar.module.scss";
-import Link from "next/link";
-import { faSun, faArrowRight, faMoon } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useRouter } from "next/router";
 
 const Navbar = ({ children }) => {
   const router = useRouter();
@@ -32,27 +32,25 @@ const Navbar = ({ children }) => {
           <div className={styles.navbar_container}>
             <h1 className={styles.navbar_name}>h4x0rlol</h1>
             <nav className={styles.navbar_buttons}>
-              <Link href="/blog">
-                <a
-                  className={
-                    router.pathname == "/blog"
-                      ? styles.active_link
-                      : styles.inactive_link
-                  }
-                >
-                  Blog
-                </a>
+              <Link
+                className={
+                  router.pathname == "/blog"
+                    ? styles.active_link
+                    : styles.inactive_link
+                }
+                href="/blog"
+              >
+                Blog
               </Link>
-              <Link href="/">
-                <a
-                  className={
-                    router.pathname == "/"
-                      ? styles.active_link
-                      : styles.inactive_link
-                  }
-                >
-                  About
-                </a>
+              <Link
+                className={
+                  router.pathname == "/"
+                    ? styles.active_link
+                    : styles.inactive_link
+                }
+                href="/"
+              >
+                About
               </Link>
             </nav>
             <div className={styles.navbar_buttons}>

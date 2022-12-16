@@ -20,10 +20,11 @@ const Blog = () => {
                   <div>
                     <header className={styles.article_header}>
                       <h1 className={styles.name}>
-                        <Link href={`/blog/${article.link}`}>
-                          <a className={styles.article_title}>
-                            {article.title}
-                          </a>
+                        <Link
+                          className={styles.article_title}
+                          href={`/blog/${article.link}`}
+                        >
+                          {article.title}
                         </Link>
                       </h1>
                     </header>

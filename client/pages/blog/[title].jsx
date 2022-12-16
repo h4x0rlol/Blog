@@ -18,10 +18,18 @@ const Article = ({ article }) => {
     )[0].tags.toString();
   };
 
+  const extractArticleAuthor = (title) => {
+    return Articles.filter((article) => article.link === title)[0].author;
+  };
+
   return (
     <>
       <Head>
         <meta keywords={extractPageKeywords(article.title)}></meta>
+        <meta
+          name="author"
+          content={extractArticleAuthor(article.title)}
+        ></meta>
         <title>{extractPageTitle(article.title)}</title>
       </Head>
       <main>
