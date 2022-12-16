@@ -192,8 +192,11 @@ const Projects = () => {
               <p>
                 Dashboard for monitoring indoor air parameters using Raspberry
                 Pi, as well as displaying data from various public APIs.{" "}
-                <Link href="/blog/react-raspberry-dashboard">
-                  <a className={styles.link}>(How to make it)</a>
+                <Link
+                  className={styles.link}
+                  href="/blog/react-raspberry-dashboard"
+                >
+                  (How to make it)
                 </Link>
               </p>
             </div>

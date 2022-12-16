@@ -32,27 +32,25 @@ const Navbar = ({ children }) => {
           <div className={styles.navbar_container}>
             <h1 className={styles.navbar_name}>h4x0rlol</h1>
             <nav className={styles.navbar_buttons}>
-              <Link href="/blog">
-                <a
-                  className={
-                    router.pathname == "/blog"
-                      ? styles.active_link
-                      : styles.inactive_link
-                  }
-                >
-                  Blog
-                </a>
+              <Link
+                className={
+                  router.pathname == "/blog"
+                    ? styles.active_link
+                    : styles.inactive_link
+                }
+                href="/blog"
+              >
+                Blog
               </Link>
-              <Link href="/">
-                <a
-                  className={
-                    router.pathname == "/"
-                      ? styles.active_link
-                      : styles.inactive_link
-                  }
-                >
-                  About
-                </a>
+              <Link
+                className={
+                  router.pathname == "/"
+                    ? styles.active_link
+                    : styles.inactive_link
+                }
+                href="/"
+              >
+                About
               </Link>
             </nav>
             <div className={styles.navbar_buttons}>
