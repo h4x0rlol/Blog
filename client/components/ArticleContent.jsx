@@ -25,18 +25,14 @@ const ArticleContent = ({ article }) => {
   const [scrollPercent, setScrollPercent] = useState(0);
   const ref = useRef(null);
 
-  const handleScroll = useMemo(
-    () =>
-      throttle(() => {
-        const percent =
-          (window.scrollY / (ref.current.clientHeight - window.innerHeight)) *
-          100;
-        setScrollPercent(percent);
-      }, 100),
-    []
-  );
-
   useEffect(() => {
+    const handleScroll = throttle(() => {
+      const percent =
+        (window.scrollY / (ref.current.clientHeight - window.innerHeight)) *
+        100;
+      setScrollPercent(percent);
+    }, 100);
+
     if (ref.current) {
       window.addEventListener("scroll", handleScroll, {
         passive: true,
