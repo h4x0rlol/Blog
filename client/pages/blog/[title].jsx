@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { Articles } from "/articles";
 import { ArticleContent } from "/components";
 import { CommentSection } from "/components";
-import { getArticleData, getArticlesFiles } from "/lib";
+import { getArticleData, getArticlesTitles } from "/lib";
 
 const Article = ({ article }) => {
   const { asPath } = useRouter();
@@ -57,13 +57,10 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const articleFilenames = await getArticlesFiles();
-  const titles = articleFilenames.map((fileName) =>
-    fileName.replace(/\.mdx/, "")
-  );
+  const titles = await getArticlesTitles();
 
   return {
-    paths: titles.map((title) => ({ params: { title: title } })),
+    paths: titles.map((title) => ({ params: { title } })),
     fallback: false,
   };
 };
