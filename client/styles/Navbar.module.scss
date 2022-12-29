@@ -126,10 +126,20 @@
   }
 
   .navbar_name {
-    padding: 0;
+    padding: 5px;
   }
 
   .navbar_container {
     width: 100%;
+  }
+}
+
+@media (max-width: 295px) {
+  .navbar_name {
+    font-size: 15px;
+  }
+
+  .navbar_buttons a {
+    font-size: 15px;
   }
 }
