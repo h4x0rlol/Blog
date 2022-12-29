@@ -1,3 +1,4 @@
 {
-  "eslint.workingDirectories": ["client/"]
+  "eslint.workingDirectories": ["client/"],
+  "cSpell.words": ["bootable"]
 }
