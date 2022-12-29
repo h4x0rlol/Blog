@@ -22,13 +22,13 @@
     "next-mdx-remote": "^4.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intersection-observer": "^8.32.0",
-    "sass": "^1.35.2"
+    "react-intersection-observer": "^8.32.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
     "@babel/eslint-parser": "^7.19.1",
     "eslint": "^8.29.0",
-    "eslint-config-next": "^13.0.7"
+    "eslint-config-next": "^13.0.7",
+    "sass": "^1.57.1"
   }
 }
