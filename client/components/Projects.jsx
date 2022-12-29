@@ -1,20 +1,44 @@
 import cn from "classnames";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import React from "react";
+import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Skills } from "/components/Skills";
 import styles from "/styles/Projects.module.scss";
 
+class SvgItem {
+  constructor(config) {
+    Object.keys(config).forEach((item) => {
+      this[item] = config[item];
+    }, this);
+
+    this.el.addEventListener("mousemove", this.mouseMoveHandler.bind(this));
+  }
+
+  update(c) {
+    this.clip.setAttribute("cx", c.x);
+    this.clip.setAttribute("cy", c.y);
+  }
+
+  getCoordinates(e, point, svg) {
+    point.x = e.clientX;
+    point.y = e.clientY;
+    return point.matrixTransform(svg.getScreenCTM().inverse());
+  }
+
+  mouseMoveHandler(e) {
+    this.update(this.getCoordinates(e, this.point, this.svg));
+  }
+}
+
 export const Projects = () => {
-  const [items, setItems] = React.useState([]);
-  const [isTouch, setIsTouch] = React.useState(false);
+  const [isTouch, setIsTouch] = useState(false);
   const [divref, divinView] = useInView({
     // triggerOnce: true,
     rootMargin: "-50px 0px",
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     const isTouchDevice =
       "ontouchstart" in window ||
       navigator.maxTouchPoints > 0 ||
@@ -28,45 +52,15 @@ export const Projects = () => {
       !isTouchDevice
     ) {
       const point = document.querySelector("svg").createSVGPoint();
-      const litems = document.querySelectorAll("#item");
+      const items = document.querySelectorAll("#item");
 
-      class Item {
-        constructor(config) {
-          Object.keys(config).forEach((item) => {
-            this[item] = config[item];
-          }, this);
-
-          this.el.addEventListener(
-            "mousemove",
-            this.mouseMoveHandler.bind(this)
-          );
-        }
-
-        update(c) {
-          this.clip.setAttribute("cx", c.x);
-          this.clip.setAttribute("cy", c.y);
-        }
-
-        getCoordinates(e, svg) {
-          point.x = e.clientX;
-          point.y = e.clientY;
-          return point.matrixTransform(svg.getScreenCTM().inverse());
-        }
-
-        mouseMoveHandler(e) {
-          this.update(this.getCoordinates(e, this.svg));
-        }
-      }
-
-      litems.forEach((item, index) => {
-        setItems((prev) => [
-          ...prev,
-          new Item({
-            el: item,
-            svg: item.querySelector("svg"),
-            clip: document.querySelector("#clip-" + index + " circle"),
-          }),
-        ]);
+      items.forEach((item, index) => {
+        new SvgItem({
+          el: item,
+          svg: item.querySelector("svg"),
+          clip: document.querySelector("#clip-" + index + " circle"),
+          point: point,
+        });
       });
     }
   }, []);

@@ -1,8 +1,8 @@
 import { throttle } from "lodash";
 import { MDXRemote } from "next-mdx-remote";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ReadProgress } from "/components";
+import Image from "next/image";
 import * as Typography from "/components/Markdown";
 import styles from "/styles/Article.module.scss";
 
