@@ -1,16 +1,14 @@
+import { useState, useEffect } from "react";
 import { faArrowRight, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
-import styles from "../styles/Navbar.module.scss";
+import styles from "/styles/Navbar.module.scss";
 
-const Navbar = ({ children }) => {
+export const Navbar = ({ children }) => {
   const router = useRouter();
-  const [activeTheme, setActiveTheme] = React.useState(
-    document.body.dataset.theme
-  );
-  const [isChecked, setIsChecked] = React.useState(
+  const [activeTheme, setActiveTheme] = useState(document.body.dataset.theme);
+  const [isChecked, setIsChecked] = useState(
     activeTheme === "light" ? true : false
   );
   const inactiveTheme = activeTheme === "light" ? "dark" : "light";
@@ -20,7 +18,7 @@ const Navbar = ({ children }) => {
     setActiveTheme(inactiveTheme);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.body.dataset.theme = activeTheme;
     window.localStorage.setItem("theme", activeTheme);
   }, [activeTheme]);
@@ -96,5 +94,3 @@ const Navbar = ({ children }) => {
     </>
   );
 };
-
-export default Navbar;

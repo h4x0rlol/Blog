@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Header from "../components/Header";
-import Projects from "../components/Projects";
-import styles from "../styles/Index.module.scss";
+import { Header } from "/components";
+import { Projects } from "/components";
+import styles from "/styles/Index.module.scss";
 
 const Index = () => {
   return (

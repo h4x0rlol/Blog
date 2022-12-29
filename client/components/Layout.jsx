@@ -1,12 +1,14 @@
-import React from "react";
 import dynamic from "next/dynamic";
-import styles from "../styles/Layout.module.scss";
+import styles from "/styles/Layout.module.scss";
 
-const Navbar = dynamic(() => import("../components/Navbar"), {
-  ssr: false,
-});
+const Navbar = dynamic(
+  () => import("/components/Navbar").then((mod) => mod.Navbar),
+  {
+    ssr: false,
+  }
+);
 
-const Layout = ({ children }) => {
+export const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
@@ -16,5 +18,3 @@ const Layout = ({ children }) => {
     </>
   );
 };
-
-export default Layout;

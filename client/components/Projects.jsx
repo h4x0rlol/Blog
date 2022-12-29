@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import styles from "../styles/Projects.module.scss";
-import Skills from "./Skills";
+import { Skills } from "/components/Skills";
+import styles from "/styles/Projects.module.scss";
 
-const Projects = () => {
+export const Projects = () => {
   const [items, setItems] = React.useState([]);
   const [isTouch, setIsTouch] = React.useState(false);
   const [divref, divinView] = useInView({
@@ -430,5 +430,3 @@ const Projects = () => {
     </>
   );
 };
-
-export default Projects;

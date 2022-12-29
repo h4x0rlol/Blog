@@ -1,9 +1,9 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { Articles } from "../../articles/Articles";
-import ArticleContent from "../../components/ArticleContent";
-import CommentSection from "../../components/CommentSection";
-import { getArticleData, getArticlesFiles } from "../../lib/utils";
+import { Articles } from "/articles";
+import { ArticleContent } from "/components";
+import { CommentSection } from "/components";
+import { getArticleData, getArticlesFiles } from "/lib";
 
 const Article = ({ article }) => {
   const { asPath } = useRouter();

@@ -1,10 +1,10 @@
 import { throttle } from "lodash";
 import { MDXRemote } from "next-mdx-remote";
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
-import styles from "../styles/Article.module.scss";
-import * as Typography from "./Markdown/Typography";
-import ReadProgress from "./ReadProgress";
+import { useEffect, useRef, useState } from "react";
+import { ReadProgress } from "/components";
+import * as Typography from "/components/Markdown";
+import styles from "/styles/Article.module.scss";
 
 const components = {
   Image,
@@ -21,7 +21,7 @@ const components = {
   code: Typography.MDCode,
 };
 
-const ArticleContent = ({ article }) => {
+export const ArticleContent = ({ article }) => {
   const [scrollPercent, setScrollPercent] = useState(0);
   const ref = useRef(null);
 
@@ -54,5 +54,3 @@ const ArticleContent = ({ article }) => {
     </>
   );
 };
-
-export default ArticleContent;
