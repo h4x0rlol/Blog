@@ -12,6 +12,10 @@
     alt="Dashboard Preview"
     width={862}
     height={382}
+    style={{
+      maxWidth: "100%",
+      height: "auto",
+    }}
   />
 </div>
 
@@ -38,12 +42,16 @@ Have you ever wondered the state of the air in your apartment? Why is it too hot
     alt="Connection Diagram"
     width={489}
     height={357}
+    style={{
+      maxWidth: "100%",
+      height: "auto",
+    }}
   />
 </div>
 
 ### Setup
 
-- Create raspbian bootale usb with [Pi Imager](https://www.raspberrypi.com/software/ "Pi Imager"), press ctrl+shift+x to open advanced options, setup wifi and ssh
+- Create raspbian bootable usb with [Pi Imager](https://www.raspberrypi.com/software/ "Pi Imager"), press ctrl+shift+x to open advanced options, setup wifi and ssh
 
 <div
   style={{
@@ -56,6 +64,10 @@ Have you ever wondered the state of the air in your apartment? Why is it too hot
     alt="Wifi settings"
     width={366}
     height={279}
+    style={{
+      maxWidth: "100%",
+      height: "auto",
+    }}
   />
 </div>
 
@@ -63,7 +75,7 @@ Have you ever wondered the state of the air in your apartment? Why is it too hot
 - Connect to your Pi via ssh
 - `ssh pi@192.168.0.102`
 
-### Install required dependecies
+### Install required dependencies
 
 - `sudo apt-get update`
 - `sudo apt-get upgrade`
@@ -76,7 +88,10 @@ Have you ever wondered the state of the air in your apartment? Why is it too hot
 
 - `cd /home/pi/Adafruit_Python_DHT/examples`
 - `./AdafruitDHT.py 22 4`
-- you should see output like this `Temp=25.1* Humidity=25.4%`
+
+### You should see output like this
+
+- `Temp=25.1* Humidity=25.4%`
 - [ Install Nodejs and yarn](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04 "Install Nodejs and yarn")
 - Install serve package globally to serve our frontend
 - `sudo yarn global add serve`
@@ -85,19 +100,20 @@ Have you ever wondered the state of the air in your apartment? Why is it too hot
 
 - `git clone https://github.com/h4x0rlol/react-raspberry-dashboard.git`
 - `cd server`
-- create .env with your API keys (like in .env.example)
+- Create .env with your API keys (like in .env.example)
 - `yarn`
 - `yarn start`
 - `cd .. && cd frontend`
 - `yarn`
 - `yarn build`
 - `serve -s build`
-- now go to your Pi adress:3000 with any device in your network to see dashboard
+- Now go to your Pi address:3000 with any device in your local network to see dashboard
 
 ### Add dashboard to Raspberry startup
 
 - `sudo nano /etc/rc.local`
-- add the folowing lines
+- Add the following lines
   `(cd /home/pi/fun/react-raspberry-dashboard/client; serve -s build) & (cd /home/pi/fun/react-raspberry-dashboard/server; yarn start) &`
 - `sudo reboot`
-- Now our server and client should start on the Pi startup
+
+### Now our server and client should start on the Pi startup

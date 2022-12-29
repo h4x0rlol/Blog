@@ -1,5 +1,4 @@
-import React from "react";
-import styles from "../../styles/Markdown.module.scss";
+import styles from "/styles/Markdown.module.scss";
 
 export const MDLink = (props) => {
   return (

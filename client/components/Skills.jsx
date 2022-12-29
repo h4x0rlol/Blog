@@ -1,6 +1,6 @@
-import styles from "../styles/Skills.module.scss";
+import styles from "/styles/Skills.module.scss";
 
-const Skills = () => {
+export const Skills = () => {
   return (
     <aside className={styles.education}>
       <section className={styles.education_section}>
@@ -95,5 +95,3 @@ const Skills = () => {
     </aside>
   );
 };
-
-export default Skills;

@@ -1,8 +1,7 @@
 import { DiscussionEmbed } from "disqus-react";
-import React from "react";
-import styles from "../styles/CommentSection.module.scss";
+import styles from "/styles/CommentSection.module.scss";
 
-const CommentSection = ({ shortname, url, id, title }) => {
+export const CommentSection = ({ shortname, url, id, title }) => {
   return (
     <div className={styles.container}>
       <DiscussionEmbed
@@ -16,5 +15,3 @@ const CommentSection = ({ shortname, url, id, title }) => {
     </div>
   );
 };
-
-export default CommentSection;

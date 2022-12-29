@@ -17,11 +17,6 @@
   font-weight: bold;
 }
 
-body {
-  transition: all 100ms linear;
-}
-
-body,
 body[data-theme="dark"] {
   --color-text-primary: #e3e3e3;
   --color-text-secondary: #ffa7c4;
@@ -55,6 +50,7 @@ body[data-theme="light"] {
 body {
   background: var(--color-bg-primary);
   color: var(--color-text-primary);
+  transition: all 100ms linear;
 }
 
 ::-webkit-scrollbar {

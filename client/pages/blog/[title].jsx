@@ -1,25 +1,29 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { Articles } from "../../articles/Articles";
-import ArticleContent from "../../components/ArticleContent";
-import CommentSection from "../../components/CommentSection";
-import { getArticleData, getArticlesFiles } from "../../lib/utils";
+import { Articles } from "/articles";
+import { ArticleContent } from "/components";
+import { CommentSection } from "/components";
+import { getArticleData, getArticlesTitles } from "/lib";
 
 const Article = ({ article }) => {
   const { asPath } = useRouter();
 
   const extractPageTitle = (title) => {
-    return Articles.filter((article) => article.link === title)[0].title;
+    return Articles.filter((article) => article.link === title)[0]?.title ?? "";
   };
 
   const extractPageKeywords = (title) => {
-    return Articles.filter(
-      (article) => article.link === title
-    )[0].tags.toString();
+    return (
+      Articles.filter(
+        (article) => article.link === title
+      )[0]?.tags?.toString() ?? ""
+    );
   };
 
   const extractArticleAuthor = (title) => {
-    return Articles.filter((article) => article.link === title)[0].author;
+    return (
+      Articles.filter((article) => article.link === title)[0]?.author ?? ""
+    );
   };
 
   return (
@@ -57,13 +61,10 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const articleFilenames = await getArticlesFiles();
-  const titles = articleFilenames.map((fileName) =>
-    fileName.replace(/\.mdx/, "")
-  );
+  const titles = await getArticlesTitles();
 
   return {
-    paths: titles.map((title) => ({ params: { title: title } })),
+    paths: titles.map((title) => ({ params: { title } })),
     fallback: false,
   };
 };
