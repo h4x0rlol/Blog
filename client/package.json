@@ -22,7 +22,8 @@
     "next-mdx-remote": "^4.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intersection-observer": "^8.32.0"
+    "react-intersection-observer": "^8.32.0",
+    "sharp": "^0.31.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
