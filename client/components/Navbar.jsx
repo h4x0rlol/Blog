@@ -1,4 +1,5 @@
 import { useState, useLayoutEffect } from "react";
+import cn from "classnames";
 import { faArrowRight, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/router";
@@ -33,11 +34,19 @@ export const Navbar = () => {
   return (
     <header className={styles.navbar}>
       <div className={styles.navbar_container}>
-        <h1 className={styles.navbar_name}>h4x0rlol</h1>
+        <Link
+          className={cn(styles.navbar_name, {
+            [styles.active_link]: router.pathname === "/",
+            [styles.inactive_link]: router.pathname !== "/",
+          })}
+          href="/"
+        >
+          h4x0rlol
+        </Link>
         <nav className={styles.navbar_buttons}>
           <Link
             className={
-              router.pathname == "/blog"
+              router.pathname === "/blog"
                 ? styles.active_link
                 : styles.inactive_link
             }
@@ -47,9 +56,11 @@ export const Navbar = () => {
           </Link>
           <Link
             className={
-              router.pathname == "/" ? styles.active_link : styles.inactive_link
+              router.pathname === "/about"
+                ? styles.active_link
+                : styles.inactive_link
             }
-            href="/"
+            href="/about"
           >
             About
           </Link>
