@@ -632,6 +632,11 @@
     "@typescript-eslint/types" "5.46.1"
     eslint-visitor-keys "^3.3.0"
 
+"@ykob/js-util@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ykob/js-util/-/js-util-2.0.0.tgz#8c6613585c6bb96d44671b57fada6d9267a96238"
+  integrity sha512-RrpsFHRNychA+k3luZ8o7zTRxJXcYSK/XPSA/DgqM4KAK5FHCmfU0VZ5eouM+jdZaB06tZcijxPxvXf6LbNlZw==
+
 acorn-jsx@^5.0.0, acorn-jsx@^5.3.2:
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.3.2.tgz#7ed5bb55908b3b2f1bc55c6af1653bada7f07937"
@@ -3574,6 +3579,11 @@ text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
+
+three@^0.148.0:
+  version "0.148.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.148.0.tgz#b6f62f9c84227f8d51c151bf17b67984ded8e4d7"
+  integrity sha512-8uzVV+qhTPi0bOFs/3te3RW6hb3urL8jYEl6irjCWo/l6sr8MPNMcClFev/MMYeIxr0gmDcoXTy/8LXh/LXkfw==
 
 tiny-glob@^0.2.9:
   version "0.2.9"
