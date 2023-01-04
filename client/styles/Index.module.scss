@@ -3,10 +3,6 @@
   width: 100%;
 }
 
-.hidden {
-  display: none !important;
-}
-
 .loader {
   display: flex;
   justify-content: center;
@@ -22,4 +18,8 @@
   top: 0px;
   left: 0px;
   position: fixed;
+}
+
+.hidden {
+  display: none !important;
 }

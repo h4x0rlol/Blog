@@ -66,3 +66,8 @@ body {
   border-radius: 8px;
   border: 4px solid transparent;
 }
+
+::selection {
+  color: var(--color-text-inactive);
+  background: rgba(0, 0, 0, 0.4);
+}
