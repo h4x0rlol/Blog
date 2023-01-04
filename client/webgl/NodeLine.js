@@ -23,15 +23,15 @@ export default class NodeLine extends THREE.LineSegments {
       3
     );
     const baOpacity = new THREE.BufferAttribute(new Float32Array(NUM * 2), 1);
-    const indeces = [];
+    const indices = [];
 
-    for (var i = 0; i < NUM * 2; i++) {
-      indeces.push(i);
+    for (let i = 0; i < NUM * 2; i++) {
+      indices.push(i);
     }
 
     geometry.setAttribute("position", baPositions);
     geometry.setAttribute("opacity", baOpacity);
-    geometry.setIndex(new THREE.BufferAttribute(new Uint16Array(indeces), 1));
+    geometry.setIndex(new THREE.BufferAttribute(new Uint16Array(indices), 1));
 
     // Define Material
     const material = new THREE.RawShaderMaterial({
@@ -46,13 +46,13 @@ export default class NodeLine extends THREE.LineSegments {
     super(geometry, material);
     this.name = "NodeLine";
   }
-  start() {}
+
   update(points, camera) {
     getViewSize(camera);
 
     let lineIndex = 0;
-    for (var i = 0; i < points.geometry.attributes.position.count; i++) {
-      for (var j = i + 1; j < points.geometry.attributes.position.count; j++) {
+    for (let i = 0; i < points.geometry.attributes.position.count; i++) {
+      for (let j = i + 1; j < points.geometry.attributes.position.count; j++) {
         V1.set(
           points.geometry.attributes.position.getX(i),
           points.geometry.attributes.position.getY(i),
@@ -63,7 +63,9 @@ export default class NodeLine extends THREE.LineSegments {
           points.geometry.attributes.position.getY(j),
           points.geometry.attributes.position.getZ(j)
         );
+
         const d = V1.distanceTo(V2);
+
         if (d < R.y * 0.15) {
           this.geometry.attributes.position.setXYZ(
             lineIndex * 2,
@@ -85,7 +87,7 @@ export default class NodeLine extends THREE.LineSegments {
       }
     }
     for (
-      var k = (lineIndex + 1) * 2;
+      let k = (lineIndex + 1) * 2;
       k < this.geometry.attributes.position.count;
       k++
     ) {

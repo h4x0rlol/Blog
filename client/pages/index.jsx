@@ -5,6 +5,7 @@ import styles from "/styles/Index.module.scss";
 import { useEffect } from "react";
 import { useRef } from "react";
 import { debounce } from "lib/webgl";
+import { Loader } from "components";
 
 const Index = () => {
   const ref = useRef();
@@ -62,7 +63,7 @@ const Index = () => {
       </Head>
       <div className={styles.container}>
         <div id="loader" className={styles.loader}>
-          Loading....
+          <Loader />
         </div>
         <canvas ref={ref} className={styles.canvas} />
       </div>

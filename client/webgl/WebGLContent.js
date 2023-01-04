@@ -20,7 +20,7 @@ export default class WebGLContent {
   }
 
   async init(resolution) {
-    this.renderer.setClearColor(0xffc600, 1.0);
+    this.renderer.setClearColor(0x15232d, 1.0);
 
     this.camera.aspect = 3 / 2;
     this.camera.far = 1000;
@@ -62,11 +62,8 @@ export default class WebGLContent {
     // When the clock is stopped, it stops the all rendering too.
     if (this.clock.running === false) return;
 
-    // Calculate msec for this frame.
-    const time = this.clock.getDelta();
-
     // Update each objects.
-    this.nodePoints.update(time, this.camera);
+    this.nodePoints.update(this.camera);
     this.nodeLine.update(this.nodePoints, this.camera);
 
     // Render the 3D scene.

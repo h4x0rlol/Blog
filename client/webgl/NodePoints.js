@@ -28,7 +28,7 @@ export default class NodePoints extends THREE.Points {
 
     getViewSize(camera);
 
-    for (var i = 0; i < NUM; i++) {
+    for (let i = 0; i < NUM; i++) {
       baPositions.setXYZ(
         i,
         R.x * (Math.random() - 0.5),
@@ -68,11 +68,11 @@ export default class NodePoints extends THREE.Points {
     super(geometry, material);
     this.name = "NodePoints";
   }
-  start() {}
-  update(time, camera) {
+
+  update(camera) {
     getViewSize(camera);
 
-    for (var i = 0; i < NUM; i++) {
+    for (let i = 0; i < NUM; i++) {
       V.set(
         this.geometry.attributes.position.getX(i),
         this.geometry.attributes.position.getY(i),
