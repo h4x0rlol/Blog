@@ -34,13 +34,7 @@ export const Navbar = () => {
   return (
     <header className={styles.navbar}>
       <div className={styles.navbar_container}>
-        <Link
-          className={cn(styles.navbar_name, {
-            [styles.active_link]: router.pathname === "/",
-            [styles.inactive_link]: router.pathname !== "/",
-          })}
-          href="/"
-        >
+        <Link className={styles.navbar_name} href="/">
           h4x0rlol
         </Link>
         <nav className={styles.navbar_buttons}>
