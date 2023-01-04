@@ -1,3 +1,4 @@
+import { Layout } from "components";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { Articles } from "/articles";
@@ -27,7 +28,7 @@ const Article = ({ article }) => {
   };
 
   return (
-    <>
+    <Layout>
       <Head>
         <meta keywords={extractPageKeywords(article.title)}></meta>
         <meta
@@ -45,7 +46,7 @@ const Article = ({ article }) => {
           title={article.title}
         />
       </main>
-    </>
+    </Layout>
   );
 };
 

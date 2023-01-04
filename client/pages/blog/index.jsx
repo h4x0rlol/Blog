@@ -2,10 +2,11 @@ import Head from "next/head";
 import Link from "next/link";
 import { Articles } from "articles";
 import styles from "/styles/Blog.module.scss";
+import { Layout } from "components";
 
 const Blog = () => {
   return (
-    <>
+    <Layout>
       <Head>
         <meta keywords="h4x0rlol, cv, blog, resume, portfolio"></meta>
         <title>Blog</title>
@@ -50,7 +51,7 @@ const Blog = () => {
           ))}
         </div>
       </main>
-    </>
+    </Layout>
   );
 };
 
