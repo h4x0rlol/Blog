@@ -20,7 +20,7 @@ export default class NodePoints extends THREE.Points {
     const geometry = new THREE.BufferGeometry();
 
     const baPositions = new THREE.BufferAttribute(new Float32Array(NUM * 3), 3);
-    const baAcceralations = new THREE.BufferAttribute(
+    const baAccelerations = new THREE.BufferAttribute(
       new Float32Array(NUM * 3),
       3
     );
@@ -37,7 +37,7 @@ export default class NodePoints extends THREE.Points {
       );
       const size = Math.random() * 6 + 1;
       const rads = radians(Math.random() * 360);
-      baAcceralations.setXYZ(
+      baAccelerations.setXYZ(
         i,
         Math.cos(rads) * (0.1 - size * 0.01),
         Math.sin(rads) * (0.1 - size * 0.01),
@@ -47,7 +47,7 @@ export default class NodePoints extends THREE.Points {
     }
 
     geometry.setAttribute("position", baPositions);
-    geometry.setAttribute("acceralation", baAcceralations);
+    geometry.setAttribute("acceleration", baAccelerations);
     geometry.setAttribute("size", baSizes);
 
     // Define Material
@@ -79,9 +79,9 @@ export default class NodePoints extends THREE.Points {
         this.geometry.attributes.position.getZ(i)
       );
       A.set(
-        this.geometry.attributes.acceralation.getX(i),
-        this.geometry.attributes.acceralation.getY(i),
-        this.geometry.attributes.acceralation.getZ(i)
+        this.geometry.attributes.acceleration.getX(i),
+        this.geometry.attributes.acceleration.getY(i),
+        this.geometry.attributes.acceleration.getZ(i)
       );
 
       V.add(A);
@@ -98,10 +98,10 @@ export default class NodePoints extends THREE.Points {
       }
 
       this.geometry.attributes.position.setXYZ(i, V.x, V.y, V.z);
-      this.geometry.attributes.acceralation.setXYZ(i, A.x, A.y, A.z);
+      this.geometry.attributes.acceleration.setXYZ(i, A.x, A.y, A.z);
     }
 
     this.geometry.attributes.position.needsUpdate = true;
-    this.geometry.attributes.acceralation.needsUpdate = true;
+    this.geometry.attributes.acceleration.needsUpdate = true;
   }
 }
