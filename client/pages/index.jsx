@@ -1,4 +1,4 @@
-import * as THREE from "three";
+import { Vector2 } from "three";
 import WebGLContent from "webgl/WebGLContent";
 import Head from "next/head";
 import styles from "/styles/Index.module.scss";
@@ -28,7 +28,7 @@ const Index = () => {
       });
 
       const webglContent = new WebGLContent(ref.current);
-      const resolution = new THREE.Vector2();
+      const resolution = new Vector2();
 
       const resizeWindow = () => {
         resolution.set(document.body.clientWidth, window.innerHeight);

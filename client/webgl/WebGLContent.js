@@ -1,4 +1,10 @@
-import * as THREE from "three";
+import {
+  WebGL1Renderer,
+  Scene,
+  PerspectiveCamera,
+  Clock,
+  Vector3,
+} from "three";
 import NodePoints from "./NodePoints";
 import NodeLine from "./NodeLine";
 
@@ -6,15 +12,15 @@ export default class WebGLContent {
   constructor(canvas) {
     this.canvas = canvas;
 
-    this.renderer = new THREE.WebGL1Renderer({
+    this.renderer = new WebGL1Renderer({
       alpha: true,
       antialias: true,
       canvas: this.canvas,
     });
 
-    this.scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera();
-    this.clock = new THREE.Clock({
+    this.scene = new Scene();
+    this.camera = new PerspectiveCamera();
+    this.clock = new Clock({
       autoStart: false,
     });
   }
@@ -26,7 +32,7 @@ export default class WebGLContent {
     this.camera.far = 1000;
     this.camera.setFocalLength(50);
     this.camera.position.set(0, 0, 50);
-    this.camera.lookAt(new THREE.Vector3());
+    this.camera.lookAt(new Vector3());
 
     this.nodePoints = new NodePoints(this.camera);
     this.nodeLine = new NodeLine();

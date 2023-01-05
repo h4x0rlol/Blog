@@ -1,12 +1,19 @@
-import * as THREE from "three";
+import {
+  Vector2,
+  Vector3,
+  Points,
+  BufferGeometry,
+  BufferAttribute,
+  RawShaderMaterial,
+} from "three";
 import vs from "./glsl/NodePoints.vs";
 import fs from "./glsl/NodePoints.fs";
 import { radians } from "./utils";
 
 const NUM = 100;
-const R = new THREE.Vector2();
-const V = new THREE.Vector3();
-const A = new THREE.Vector3();
+const R = new Vector2();
+const V = new Vector3();
+const A = new Vector3();
 
 const getViewSize = (camera) => {
   const fovInRadians = (camera.fov * Math.PI) / 180;
@@ -14,17 +21,14 @@ const getViewSize = (camera) => {
   R.set(height * camera.aspect, height);
 };
 
-export default class NodePoints extends THREE.Points {
+export default class NodePoints extends Points {
   constructor(camera) {
     // Define Geometry
-    const geometry = new THREE.BufferGeometry();
+    const geometry = new BufferGeometry();
 
-    const baPositions = new THREE.BufferAttribute(new Float32Array(NUM * 3), 3);
-    const baAccelerations = new THREE.BufferAttribute(
-      new Float32Array(NUM * 3),
-      3
-    );
-    const baSizes = new THREE.BufferAttribute(new Float32Array(NUM), 1);
+    const baPositions = new BufferAttribute(new Float32Array(NUM * 3), 3);
+    const baAccelerations = new BufferAttribute(new Float32Array(NUM * 3), 3);
+    const baSizes = new BufferAttribute(new Float32Array(NUM), 1);
 
     getViewSize(camera);
 
@@ -51,7 +55,7 @@ export default class NodePoints extends THREE.Points {
     geometry.setAttribute("size", baSizes);
 
     // Define Material
-    const material = new THREE.RawShaderMaterial({
+    const material = new RawShaderMaterial({
       uniforms: {
         time: {
           type: "f",

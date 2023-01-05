@@ -1,11 +1,18 @@
-import * as THREE from "three";
+import {
+  Vector2,
+  Vector3,
+  LineSegments,
+  BufferGeometry,
+  BufferAttribute,
+  RawShaderMaterial,
+} from "three";
 import vs from "./glsl/NodeLine.vs";
 import fs from "./glsl/NodeLine.fs";
 
 const NUM = 1000;
-const R = new THREE.Vector2();
-const V1 = new THREE.Vector3();
-const V2 = new THREE.Vector3();
+const R = new Vector2();
+const V1 = new Vector3();
+const V2 = new Vector3();
 
 const getViewSize = (camera) => {
   const fovInRadians = (camera.fov * Math.PI) / 180;
@@ -13,16 +20,13 @@ const getViewSize = (camera) => {
   R.set(height * camera.aspect, height);
 };
 
-export default class NodeLine extends THREE.LineSegments {
+export default class NodeLine extends LineSegments {
   constructor() {
     // Define Geometry
-    const geometry = new THREE.BufferGeometry();
+    const geometry = new BufferGeometry();
 
-    const baPositions = new THREE.BufferAttribute(
-      new Float32Array(NUM * 3 * 2),
-      3
-    );
-    const baOpacity = new THREE.BufferAttribute(new Float32Array(NUM * 2), 1);
+    const baPositions = new BufferAttribute(new Float32Array(NUM * 3 * 2), 3);
+    const baOpacity = new BufferAttribute(new Float32Array(NUM * 2), 1);
     const indices = [];
 
     for (let i = 0; i < NUM * 2; i++) {
@@ -31,10 +35,10 @@ export default class NodeLine extends THREE.LineSegments {
 
     geometry.setAttribute("position", baPositions);
     geometry.setAttribute("opacity", baOpacity);
-    geometry.setIndex(new THREE.BufferAttribute(new Uint16Array(indices), 1));
+    geometry.setIndex(new BufferAttribute(new Uint16Array(indices), 1));
 
     // Define Material
-    const material = new THREE.RawShaderMaterial({
+    const material = new RawShaderMaterial({
       vertexShader: vs,
       fragmentShader: fs,
       transparent: true,
