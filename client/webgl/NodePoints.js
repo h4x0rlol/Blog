@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import vs from "./glsl/NodePoints.vs";
 import fs from "./glsl/NodePoints.fs";
-import { radians } from "lib/webgl";
+import { radians } from "./utils";
 
 const NUM = 100;
 const R = new THREE.Vector2();

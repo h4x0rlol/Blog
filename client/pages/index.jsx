@@ -4,7 +4,7 @@ import Head from "next/head";
 import styles from "/styles/Index.module.scss";
 import { useEffect } from "react";
 import { useRef } from "react";
-import { debounce } from "lib/webgl";
+import { debounce } from "lodash";
 import { Loader } from "components";
 
 const Index = () => {
@@ -51,6 +51,7 @@ const Index = () => {
 
       return () => {
         window.removeEventListener("resize", resize);
+        resize.cancel();
       };
     }
   }, []);
