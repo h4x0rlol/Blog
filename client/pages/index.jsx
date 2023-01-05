@@ -14,6 +14,10 @@ const Index = () => {
   useEffect(() => {
     const loader = document.getElementById("loader");
 
+    setTimeout(() => {
+      document.body.className = "";
+    }, 500);
+
     if (ref.current) {
       ref.current.addEventListener("contextmenu", (event) => {
         event.preventDefault();

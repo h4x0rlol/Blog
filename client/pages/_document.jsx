@@ -16,6 +16,7 @@ class MyDocument extends Document {
                 ? 'dark'
                 : 'light'
     }
+    document.body.className = 'preload'
     document.body.dataset.theme = getUserPreference();
   `;
     return (
