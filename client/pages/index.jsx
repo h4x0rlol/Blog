@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import { debounce } from "lodash";
 import { Loader } from "components";
+import { Logo } from "components";
 
 const Index = () => {
   const ref = useRef();
@@ -62,10 +63,11 @@ const Index = () => {
         <meta keywords="h4x0rlol, cv, blog, resume, portfolio" />
         <title>h4x0rlol</title>
       </Head>
-      <div className={styles.container}>
+      <div>
         <div id="loader" className={styles.loader}>
           <Loader />
         </div>
+        <Logo />
         <canvas ref={ref} className={styles.canvas} />
       </div>
     </>
