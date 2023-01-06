@@ -6,3 +6,5 @@ export * from "./Navbar";
 export * from "./Projects";
 export * from "./ReadProgress";
 export * from "./Skills";
+export * from "./Loader";
+export * from "./Logo";
