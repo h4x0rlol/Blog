@@ -16,9 +16,11 @@ class MyDocument extends Document {
                 ? 'dark'
                 : 'light'
     }
-    document.body.className = 'preload'
+   
     document.body.dataset.theme = getUserPreference();
   `;
+
+    //  document.body.className = 'preload'
     return (
       <Html lang="en">
         <Head>

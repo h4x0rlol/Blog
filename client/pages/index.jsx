@@ -14,9 +14,9 @@ const Index = () => {
   useEffect(() => {
     const loader = document.getElementById("loader");
 
-    setTimeout(() => {
-      document.body.className = "";
-    }, 500);
+    // setTimeout(() => {
+    //   document.body.className = "";
+    // }, 500);
 
     if (ref.current) {
       ref.current.addEventListener("contextmenu", (event) => {
@@ -50,7 +50,7 @@ const Index = () => {
         await webglContent.init(resolution);
       })();
 
-      loader.classList.add(styles.hidden);
+      // loader.classList.add(styles.hidden);
       webglContent.start();
       render(webglContent);
 
