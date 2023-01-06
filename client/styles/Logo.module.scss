@@ -1,4 +1,5 @@
 $easeOutCirc: cubic-bezier(0.075, 0.82, 0.165, 1);
+$easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
 
 .wrapper {
   font-family: Homenaje, sans-serif;
@@ -15,6 +16,23 @@ $easeOutCirc: cubic-bezier(0.075, 0.82, 0.165, 1);
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  &__row {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition-property: opacity, transform;
+    &.is_shown {
+      opacity: 1;
+      transform: translateY(0);
+      transition-duration: 1s;
+      transition-timing-function: $easeOutCubic;
+      @for $i from 0 through 4 {
+        &:nth-of-type(#{$i + 1}) {
+          transition-delay: $i * 0.25s + 1s;
+        }
+      }
+    }
+  }
 }
 
 .name {
@@ -43,7 +61,7 @@ $easeOutCirc: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .github {
-  width: 25px;
+  width: 26px;
   height: 25px;
   display: inline-block;
   fill: #e3e3e3;
@@ -56,13 +74,29 @@ $easeOutCirc: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .icon {
-  width: 25px;
-  height: 25px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   z-index: 50;
+  opacity: 0;
+  transition-property: opacity, transform;
   top: 62%;
   left: 50%;
-  transform: translate(-50%, -62%);
+  transform: translate(-50%, -62%) scale(1.5);
+
+  &.is_shown {
+    opacity: 1;
+    transform: translate(-50%, -62%) scale(1);
+    transition-duration: 1s;
+    transition-timing-function: $easeOutCubic;
+
+    @for $i from 0 through 4 {
+      &:nth-of-type(#{$i + 1}) {
+        transition-delay: $i * 0.1s + 1.5s;
+      }
+    }
+  }
 }
 
 .link {
@@ -131,14 +165,22 @@ $easeOutCirc: cubic-bezier(0.075, 0.82, 0.165, 1);
 @media (max-width: 1280px) {
   .icon {
     top: 70%;
-    transform: translate(-50%, -70%);
+    transform: translate(-50%, -70%) scale(1.5);
+
+    &.is_shown {
+      transform: translate(-50%, -70%) scale(1);
+    }
   }
 }
 
 @media (max-width: 1024px) {
   .icon {
     top: 62%;
-    transform: translate(-50%, -62%);
+    transform: translate(-50%, -62%) scale(1.5);
+
+    &.is_shown {
+      transform: translate(-50%, -62%) scale(1);
+    }
   }
 }
 
@@ -153,6 +195,10 @@ $easeOutCirc: cubic-bezier(0.075, 0.82, 0.165, 1);
 
   .icon {
     top: 62%;
-    transform: translate(-50%, -62%);
+    transform: translate(-50%, -62%) scale(1.5);
+
+    &.is_shown {
+      transform: translate(-50%, -62%) scale(1);
+    }
   }
 }

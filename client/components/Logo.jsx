@@ -1,25 +1,44 @@
 import Link from "next/link";
+import cn from "classnames";
 import styles from "/styles/Logo.module.scss";
+import { useEffect } from "react";
 
 export const Logo = () => {
+  useEffect(() => {
+    const elemIntro = document.getElementsByClassName("js-transition-intro");
+
+    const transitionOnload = () => {
+      for (let i = 0; i < elemIntro.length; i++) {
+        const elm = elemIntro[i];
+        elm.classList.add(styles.is_shown);
+      }
+    };
+
+    transitionOnload();
+  }, []);
+
   return (
     <>
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <h2 className={styles.name}>h4x0rlol</h2>
-          <div className={styles.links}>
-            <Link className={styles.link} href="/blog">
-              <span className={styles.link__label}>Blog</span>
-              <span className={styles.link__bg} />
-            </Link>
-            <Link className={styles.link} href="/about">
-              <span className={styles.link__label}>About</span>
-              <span className={styles.link__bg} />
-            </Link>
+          <div className={cn(styles.container__row, "js-transition-intro")}>
+            <h2 className={styles.name}>h4x0rlol</h2>
+          </div>
+          <div className={cn(styles.container__row, "js-transition-intro")}>
+            <div className={styles.links}>
+              <Link className={styles.link} href="/blog">
+                <span className={styles.link__label}>Blog</span>
+                <span className={styles.link__bg} />
+              </Link>
+              <Link className={styles.link} href="/about">
+                <span className={styles.link__label}>About</span>
+                <span className={styles.link__bg} />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-      <div className={styles.icon}>
+      <div className={cn(styles.icon, "js-transition-intro")}>
         <a
           className={styles.github}
           href="https://github.com/h4x0rlol"

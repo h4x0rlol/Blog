@@ -50,7 +50,7 @@ const Index = () => {
         await webglContent.init(resolution);
       })();
 
-      // loader.classList.add(styles.hidden);
+      loader.classList.add(styles.hidden);
       webglContent.start();
       render(webglContent);
 
