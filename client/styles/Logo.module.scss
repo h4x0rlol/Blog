@@ -81,13 +81,13 @@ $easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
   z-index: 50;
   opacity: 0;
   transition-property: opacity, transform;
-  top: 62%;
+  top: 95%;
   left: 50%;
-  transform: translate(-50%, -62%) scale(1.5);
+  transform: translate(-50%, -95%) scale(1.5) rotate(-5760deg);
 
   &.is_shown {
     opacity: 1;
-    transform: translate(-50%, -62%) scale(1);
+    transform: translate(-50%, -95%) scale(1);
     transition-duration: 1s;
     transition-timing-function: $easeOutCubic;
 
@@ -162,28 +162,6 @@ $easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 }
 
-@media (max-width: 1280px) {
-  .icon {
-    top: 70%;
-    transform: translate(-50%, -70%) scale(1.5);
-
-    &.is_shown {
-      transform: translate(-50%, -70%) scale(1);
-    }
-  }
-}
-
-@media (max-width: 1024px) {
-  .icon {
-    top: 62%;
-    transform: translate(-50%, -62%) scale(1.5);
-
-    &.is_shown {
-      transform: translate(-50%, -62%) scale(1);
-    }
-  }
-}
-
 @media (max-width: 480px) {
   .name {
     font-size: 70px;
@@ -191,14 +169,5 @@ $easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
 
   .links a {
     font-size: 35px;
-  }
-
-  .icon {
-    top: 62%;
-    transform: translate(-50%, -62%) scale(1.5);
-
-    &.is_shown {
-      transform: translate(-50%, -62%) scale(1);
-    }
   }
 }
