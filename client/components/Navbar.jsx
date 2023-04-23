@@ -1,5 +1,4 @@
 import { useState, useLayoutEffect } from "react";
-import cn from "classnames";
 import { faArrowRight, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/router";
