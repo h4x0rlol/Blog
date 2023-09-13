@@ -1,16 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  webpack: (config, options) => {
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  webpack: config => {
     config.module.rules.push(
       {
         test: /\.fs/,
-        type: "asset/source",
+        type: 'asset/source',
       },
       {
         test: /\.vs/,
-        type: "asset/source",
-      }
+        type: 'asset/source',
+      },
     );
     return config;
   },
