@@ -42,14 +42,12 @@
 
 .header_spoiler_tag {
   color: var(--color-bg-primary);
-  background-color: var(--color-bg-primary);
   transition: all 100ms linear;
   margin-left: 5px;
 }
 
 .header_spoiler_tag:hover {
   color: var(--color-text-primary);
-  background-color: var(--color-bg-primary);
   transition: all 100ms linear;
 }
 
@@ -65,8 +63,8 @@
   padding-left: 0;
   list-style: none;
   margin-top: 0;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   padding-inline-start: 10px;
@@ -80,6 +78,7 @@
 
 .header_link {
   text-decoration: none;
+  font-weight: 700;
   cursor: pointer;
   color: var(--color-text-primary);
   transition: all 100ms linear;
@@ -87,12 +86,10 @@
 
 .header_svg {
   overflow: visible;
-  width: 1.25em;
-  vertical-align: -0.225em;
+  width: 1.6rem;
   margin-right: 0.5rem;
-  font-size: 1.3333333333em;
-  line-height: 0.75em;
-  height: 1em;
+  font-size: 1.3rem;
+  height: 1.3rem;
 }
 
 .hr {

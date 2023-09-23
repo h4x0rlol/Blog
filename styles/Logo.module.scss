@@ -5,7 +5,7 @@ $easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
   font-family: Homenaje, sans-serif;
   color: #e3e3e3;
   position: fixed;
-  z-index: 50;
+  z-index: 2;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -19,14 +19,17 @@ $easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
 
   &__row {
     opacity: 0;
+    visibility: hidden;
     transform: translateY(-10px);
-    transition-property: opacity, transform;
+    transition-property: opacity, transform, visibility;
+
     &.is_shown {
       opacity: 1;
+      visibility: visible;
       transform: translateY(0);
       transition-duration: 1s;
       transition-timing-function: $easeOutCubic;
-      @for $i from 0 through 4 {
+      @for $i from 0 through 2 {
         &:nth-of-type(#{$i + 1}) {
           transition-delay: $i * 0.25s + 1s;
         }
@@ -39,7 +42,7 @@ $easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
   font-size: 100px;
   line-height: 1;
   font-weight: 400;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.3rem;
 }
 
 .links {
@@ -48,6 +51,7 @@ $easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
   justify-content: space-between;
   align-items: center;
   font-variant: all-small-caps;
+  font-weight: 700;
 
   a {
     font-size: 50px;
@@ -56,7 +60,7 @@ $easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
     padding: 0 10px;
     cursor: pointer;
     color: #e3e3e3;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.45rem;
   }
 }
 
@@ -64,13 +68,14 @@ $easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
   width: 27px;
   height: 25px;
   display: inline-block;
-  fill: #e3e3e3;
-  transition: fill 0.4s $easeOutCirc;
+  transition-property: color, transform;
+  transition-duration: 0.4s;
+  color: #e3e3e3;
 }
 
 .github:hover {
-  fill: #ffa7c4;
-  transition: fill 0.4s $easeOutCirc;
+  color: #ffa7c4;
+  transform: scale(1.05);
 }
 
 .icon {
@@ -78,24 +83,21 @@ $easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
   justify-content: center;
   align-items: center;
   position: fixed;
-  z-index: 50;
   opacity: 0;
-  transition-property: opacity, transform;
+  z-index: 2;
+  visibility: hidden;
+  transition-property: opacity, transform, visibility;
   top: 95%;
   left: 50%;
   transform: translate(-50%, -95%) scale(1.5) rotate(-5760deg);
 
   &.is_shown {
     opacity: 1;
+    visibility: visible;
     transform: translate(-50%, -95%) scale(1);
     transition-duration: 1s;
     transition-timing-function: $easeOutCubic;
-
-    @for $i from 0 through 4 {
-      &:nth-of-type(#{$i + 1}) {
-        transition-delay: $i * 0.1s + 1.5s;
-      }
-    }
+    transition-delay: 1.6s;
   }
 }
 
@@ -106,7 +108,6 @@ $easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
   &__label {
     display: inline-block;
     position: relative;
-    z-index: 2;
   }
 
   &__bg {

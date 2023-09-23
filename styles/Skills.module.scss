@@ -1,5 +1,5 @@
-.education {
-  flex: 0 0 25%;
+.wrapper {
+  flex: auto;
   max-width: 25%;
   border-left: 1px solid var(--color-border-secondary);
   font-size: 1rem;
@@ -9,7 +9,7 @@
   transition: all 100ms linear;
 }
 
-.education_section {
+.section {
   padding-bottom: 1rem;
   padding-top: 1rem;
 }
@@ -28,7 +28,7 @@
 }
 
 .section_header::before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 5px;
   height: 100%;
@@ -50,44 +50,28 @@
 
 .section_li {
   margin-bottom: 1rem;
-  font-weight: 400;
 }
 
-.degree {
-  font-weight: 700;
-}
-
-.university {
-  font-weight: 400;
-}
-
-.education_years {
-  font-weight: 400;
-  font-size: 0.85rem;
-}
-
-.skills {
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-}
-
-.languages {
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-}
-
-.muted {
-  font-weight: 400;
-}
-
-.work_ul {
+.nested_ul {
   margin: 0;
   list-style: disc;
   padding: 1em 1em 0 1em;
 }
 
+.bold {
+  font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.dates {
+  font-size: 0.85rem;
+}
+
 @media (max-width: 768px) {
-  .education {
+  .wrapper {
     border-left: 0;
     padding-left: 0.2rem;
     border-bottom: 1px solid var(--color-border-secondary);

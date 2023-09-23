@@ -5,8 +5,7 @@
 
 .md_p {
   line-height: 1.625;
-  font-weight: 400;
-  margin: 1em 0;
+  margin: 1.3rem 0;
   font-size: 18px;
 
   @media (max-width: 480px) {
@@ -22,20 +21,26 @@
 
 .md_heading {
   font-size: 1.17rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.5;
 }
 
 .md_code {
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
-    Liberation Mono, monospace;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    SF Mono,
+    Menlo,
+    Consolas,
+    Liberation Mono,
+    monospace;
   font-size: 85%;
   display: block;
   overflow-x: auto;
   overflow-wrap: break-word;
   background: var(--color-code-bg);
   color: var(--color-code);
-  padding: 0.5em;
+  padding: 0.45rem;
 }
 
 .md_hr {
@@ -46,8 +51,7 @@
 }
 
 .md_li {
-  line-height: 1.4em;
   font-weight: 400;
-  margin: 1.1em 0;
+  margin: 1.1rem 0;
   font-size: 17px;
 }

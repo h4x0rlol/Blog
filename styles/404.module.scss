@@ -1,5 +1,6 @@
 .error {
   height: 100vh;
+  width: 100%;
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -22,17 +23,14 @@
   transition: all 100ms linear;
 }
 
-.text {
-  text-align: left;
-  line-height: 49px;
-  height: 49px;
-}
-
 .h2 {
   font-size: 24px;
   line-height: inherit;
   margin: 0;
   padding: 0;
+  text-align: left;
+  line-height: 49px;
+  height: 49px;
 }
 
 @media (max-width: 480px) {
