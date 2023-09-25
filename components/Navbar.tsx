@@ -11,7 +11,7 @@ import { useState } from 'react';
 import styles from '../styles/Navbar.module.scss';
 
 export function Navbar() {
-  const [activeTheme, setActiveTheme] = useState(document.body.dataset.theme ?? '');
+  const [activeTheme, setActiveTheme] = useState(document.body.dataset.theme ?? THEMES.LIGHT);
   const inactiveTheme = activeTheme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT;
 
   const pathname = usePathname();
