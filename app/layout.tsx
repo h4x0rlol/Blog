@@ -44,6 +44,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5" />
+      </head>
       <body>
         <Script id="theme" dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
         {children}
