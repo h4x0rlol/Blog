@@ -1,7 +1,12 @@
 import { Articles } from '@/articles';
 import { PATHS } from '@/constants';
+import { Metadata } from 'next';
 import Link from 'next/link';
-import styles from '../../styles/Blog.module.scss';
+import styles from '../../../styles/Blog.module.scss';
+
+export const metadata: Metadata = {
+  title: 'Blog',
+};
 
 export default function Page() {
   return (

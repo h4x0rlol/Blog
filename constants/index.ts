@@ -15,7 +15,7 @@ export const METADATA = {
   DESCRIPTION: 'frontend dev portfolio or smth like that',
 };
 
-export const DOMAIN = 'https://h4x0rlol.me';
+export const DOMAIN = 'https://h4x0rlol.pw';
 
 export const LINKS = {
   TG: 'https://t.me/h4x0rlol',
